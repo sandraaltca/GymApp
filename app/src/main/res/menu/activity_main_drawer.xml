@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/tu_perfil"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Tu perfil" />
+        <item
+            android:id="@+id/tu_rutina"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Tu rutina" />
+        <item
+            android:id="@+id/calendario_sesiones"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Calendario de sesiones" />
+        <item
+            android:id="@+id/video_sesiones"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Videos sesiones" />
+    </group>
+
+    <item android:title="Máquinas">
+        <menu>
+            <item
+                android:id="@+id/maquina_qr"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Incidencias" />
+            <item
+                android:id="@+id/maquina_incidencia"
+                android:icon="@drawable/ic_menu_send"
+                android:title="¿Como utilitzar está máquina?" />
+        </menu>
+    </item>
+
+    <item android:title="Centro">
+        <menu>
+            <item
+                android:id="@+id/contacta_centro"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Contacta con el centro" />
+            <item
+                android:id="@+id/localiza_centro"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Localiza el centro" />
+        </menu>
+    </item>
+
+</menu>
