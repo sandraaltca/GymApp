@@ -4,10 +4,136 @@
     android:layout_height="match_parent"
     tools:context="com.example.sandra.gymapp.LocalizaCentro">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom">
+
+    </RelativeLayout>
+
+    <org.osmdroid.views.MapView
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:id="@+id/map"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="155dp"
+        android:layout_gravity="center_horizontal|top" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_gravity="left|bottom"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Direcció :"
+            android:id="@+id/textView7"
+            android:layout_marginBottom="144dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Centre :"
+            android:id="@+id/textView8"
+            android:layout_above="@+id/textView7"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="60dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teléfon : "
+            android:id="@+id/textView9"
+            android:layout_alignTop="@+id/textView7"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="28dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horari :"
+            android:id="@+id/textView10"
+            android:layout_below="@+id/textView9"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email :"
+            android:id="@+id/textView11"
+            android:layout_below="@+id/textView10"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Centro Pepito"
+            android:id="@+id/nomCentre"
+            android:layout_alignTop="@+id/textView8"
+            android:layout_toRightOf="@+id/textView10"
+            android:layout_toEndOf="@+id/textView10"
+            android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C/ hola"
+            android:id="@+id/direccioCentre"
+            android:layout_alignTop="@+id/textView7"
+            android:layout_toRightOf="@+id/textView7"
+            android:layout_toEndOf="@+id/textView7"
+            android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123 456 789"
+            android:id="@+id/telCentre"
+            android:layout_above="@+id/textView10"
+            android:layout_alignLeft="@+id/direccioCentre"
+            android:layout_alignStart="@+id/direccioCentre" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dilluns - Dissabte :21.00-1.00"
+            android:id="@+id/horariCentre"
+            android:layout_below="@+id/textView9"
+            android:layout_toRightOf="@+id/textView10"
+            android:layout_toEndOf="@+id/textView10"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="poblenou@example.com"
+            android:id="@+id/emailCentre"
+            android:layout_alignBottom="@+id/textView11"
+            android:layout_alignLeft="@+id/horariCentre"
+            android:layout_alignStart="@+id/horariCentre" />
+    </RelativeLayout>
+
 
 </FrameLayout>
