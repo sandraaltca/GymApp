@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/correoUsuarioEnvi"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -45,35 +45,35 @@
             android:inputType="textPersonName"
             android:text="Assumpte"
             android:ems="10"
-            android:id="@+id/editText2"
-            android:layout_below="@+id/editText"
+            android:id="@+id/asumptConta"
+            android:layout_below="@+id/correoUsuarioEnvi"
             android:layout_alignLeft="@+id/textView6"
             android:layout_alignStart="@+id/textView6"
             android:layout_marginTop="17dp"
-            android:layout_alignRight="@+id/editText"
-            android:layout_alignEnd="@+id/editText" />
+            android:layout_alignRight="@+id/correoUsuarioEnvi"
+            android:layout_alignEnd="@+id/correoUsuarioEnvi" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textMultiLine"
             android:ems="10"
-            android:id="@+id/editText3"
-            android:layout_below="@+id/editText2"
-            android:layout_alignLeft="@+id/editText2"
-            android:layout_alignStart="@+id/editText2"
+            android:id="@+id/misstatge"
+            android:layout_below="@+id/asumptConta"
+            android:layout_alignLeft="@+id/asumptConta"
+            android:layout_alignStart="@+id/asumptConta"
             android:layout_marginTop="16dp"
             android:text="Redacteu el missatge"
-            android:layout_alignRight="@+id/editText2"
-            android:layout_alignEnd="@+id/editText2" />
+            android:layout_alignRight="@+id/asumptConta"
+            android:layout_alignEnd="@+id/asumptConta" />
 
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageButton"
+            android:id="@+id/enviarCon"
             android:layout_alignParentBottom="true"
-            android:layout_alignRight="@+id/editText"
-            android:layout_alignEnd="@+id/editText"
+            android:layout_alignRight="@+id/correoUsuarioEnvi"
+            android:layout_alignEnd="@+id/correoUsuarioEnvi"
             android:layout_marginBottom="42dp"
             android:src="@drawable/abc_ic_menu_selectall_mtrl_alpha" />
 
