@@ -34,4 +34,7 @@ dependencies {
     compile 'com.squareup.retrofit:converter-gson:2.0.0-beta2'
     compile 'com.firebase:firebase-client-android:2.5.0+'
     compile 'com.firebaseui:firebase-ui:0.3.0'
+    compile 'org.osmdroid:osmdroid-android:5.1@aar'
+    compile 'com.github.MKergall.osmbonuspack:OSMBonusPack:v5.7'
+
 }

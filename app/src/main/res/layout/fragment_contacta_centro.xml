@@ -5,9 +5,77 @@
     tools:context="com.example.sandra.gymapp.ContactaCentro">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_gravity="left|top">
 
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/correoUsuarioEnvi"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:text="poblenou@exemple.com"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginRight="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="De"
+            android:id="@+id/textView6"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="9dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Assumpte"
+            android:ems="10"
+            android:id="@+id/asumptConta"
+            android:layout_below="@+id/correoUsuarioEnvi"
+            android:layout_alignLeft="@+id/textView6"
+            android:layout_alignStart="@+id/textView6"
+            android:layout_marginTop="17dp"
+            android:layout_alignRight="@+id/correoUsuarioEnvi"
+            android:layout_alignEnd="@+id/correoUsuarioEnvi" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/misstatge"
+            android:layout_below="@+id/asumptConta"
+            android:layout_alignLeft="@+id/asumptConta"
+            android:layout_alignStart="@+id/asumptConta"
+            android:layout_marginTop="16dp"
+            android:text="Redacteu el missatge"
+            android:layout_alignRight="@+id/asumptConta"
+            android:layout_alignEnd="@+id/asumptConta" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/enviarCon"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/correoUsuarioEnvi"
+            android:layout_alignEnd="@+id/correoUsuarioEnvi"
+            android:layout_marginBottom="42dp"
+            android:src="@drawable/abc_ic_menu_selectall_mtrl_alpha" />
+
+    </RelativeLayout>
 </FrameLayout>
