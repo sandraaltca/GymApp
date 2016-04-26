@@ -1,6 +1,7 @@
 package com.example.sandra.gymapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -103,8 +104,8 @@ public class MainActivity extends AppCompatActivity
             fragment = new Incidencias();
             transaccion = true;
         }else if (id == R.id.contacta_centro) {
-            fragment = new ContactaCentro();
-            transaccion = true;
+            Intent i = new Intent(this,ContactaCentro.class);
+            startActivity(i);
         } else if (id == R.id.localiza_centro) {
             fragment = new LocalizaCentro();
             transaccion = true;
