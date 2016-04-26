@@ -85,8 +85,7 @@ public class MainActivity extends AppCompatActivity
         boolean transaccion = false;
 
         if (id == R.id.tu_perfil) {
-            fragment = new TuPerfil();
-            transaccion = true;
+
         } else if (id == R.id.tu_rutina) {
             fragment = new TuRutina();
             transaccion = true;
