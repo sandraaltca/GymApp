@@ -16,7 +16,9 @@
             android:layout_height="100dp"
             android:id="@+id/imageView2"
             android:src="@mipmap/ic_launcher"
-            android:layout_marginLeft="10dp" />
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,11 +46,13 @@
             android:layout_height="wrap_content"
             android:text="Telefon :"
             android:id="@+id/textView2"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="53dp"
+            android:textStyle="bold"
             android:layout_below="@+id/imageView2"
-            android:layout_alignRight="@+id/imageView2"
-            android:layout_alignEnd="@+id/imageView2"
-            android:textStyle="bold" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -89,9 +93,8 @@
             android:text="633676764"
             android:id="@+id/telUsuari"
             android:layout_above="@+id/textView3"
-            android:layout_toRightOf="@+id/imageView2"
-            android:layout_toEndOf="@+id/imageView2"
-            android:layout_marginLeft="2dp" />
+            android:layout_toRightOf="@+id/textView2"
+            android:layout_toEndOf="@+id/textView2" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -118,10 +121,9 @@
             android:layout_height="wrap_content"
             android:text="Basica"
             android:id="@+id/tarifaUsuari"
-            android:layout_alignBottom="@+id/textView5"
-            android:layout_alignLeft="@+id/numeroSoci"
-            android:layout_alignStart="@+id/numeroSoci"
-            android:layout_marginLeft="2dp" />
+            android:layout_alignTop="@+id/textView5"
+            android:layout_toRightOf="@+id/textView5"
+            android:layout_toEndOf="@+id/textView5" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -131,7 +133,8 @@
             android:layout_above="@+id/textView3"
             android:layout_toRightOf="@+id/telUsuari"
             android:layout_toEndOf="@+id/telUsuari"
-            android:layout_marginLeft="3dp" />
+            android:layout_marginLeft="3dp"
+            android:background="#00ffffff" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -141,7 +144,8 @@
             android:layout_above="@+id/textView4"
             android:layout_alignLeft="@+id/editEmail"
             android:layout_alignStart="@+id/editEmail"
-            android:layout_marginLeft="3dp" />
+            android:layout_marginLeft="3dp"
+            android:background="#00ffffff" />
 
         <ImageButton
             android:layout_width="wrap_content"
@@ -151,6 +155,8 @@
             android:layout_alignBottom="@+id/emailUsuari"
             android:layout_toRightOf="@+id/direccioUsuari"
             android:layout_toEndOf="@+id/direccioUsuari"
-            android:layout_marginLeft="3dp" />
+            android:layout_marginLeft="3dp"
+            android:background="#00ffffff" />
+
     </RelativeLayout>
 </FrameLayout>

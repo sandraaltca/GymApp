@@ -107,7 +107,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     @Override
                     public void onAuthenticated(AuthData authData) {
                         System.out.println("User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
+                        String uid = authData.getUid();
                         Intent i = new Intent(getBaseContext(), MainActivity.class);
+                        i.putExtra("uid", uid);
                         startActivity(i);
                     }
 
