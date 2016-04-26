@@ -1,6 +1,7 @@
 package com.example.sandra.gymapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -82,10 +83,12 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Intent i ;
         boolean transaccion = false;
 
         if (id == R.id.tu_perfil) {
-
+            i = new Intent(getBaseContext(),Tuperfil.class);
+            startActivity(i);
         } else if (id == R.id.tu_rutina) {
             fragment = new TuRutina();
             transaccion = true;
