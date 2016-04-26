@@ -6,6 +6,9 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
+
+import com.firebase.client.Firebase;
 
 public class Tuperfil extends AppCompatActivity {
 
@@ -24,5 +27,21 @@ public class Tuperfil extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        Firebase.setAndroidContext(this);
+
+        Firebase ref = new Firebase("https://fiery-inferno-9835.firebaseio.com/");
+        TextView nom = (TextView)findViewById(R.id.nomPerfil);
+        TextView numSoci = (TextView)findViewById(R.id.numSoci);
+        TextView telefon = (TextView)findViewById(R.id.telfPerfil);
+        TextView direccio = (TextView)findViewById(R.id.direccioPerfil);
+        TextView email = (TextView)findViewById(R.id.email);
+
+
+
+
+
+
+
     }
 }
