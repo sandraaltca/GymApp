@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.text.util.Linkify;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -32,7 +31,7 @@ public class Incidencias extends Fragment {
     private EditText missatgeIncidencia;
     private TextView tvResult;
     private ImageButton buttonReader;
-    private Button enviar;
+    private ImageButton enviar;
 
     public Incidencias() {
         // Required empty public constructor
@@ -56,10 +55,10 @@ public class Incidencias extends Fragment {
          * Instanciem els objectes
          */
         missatgeIncidencia =(EditText)rootView.findViewById(R.id.missatge);
-        tipusdeIncidencia = (EditText)rootView.findViewById(R.id.tipuIncidencia);
+        tipusdeIncidencia = (EditText)rootView.findViewById(R.id.textView17);
         buttonReader = (ImageButton) rootView.findViewById(R.id.butoQR);
         tvResult= (TextView) rootView.findViewById(R.id.tvResult);
-        enviar = (Button) rootView.findViewById(R.id.enviarIncidencia);
+        enviar = (ImageButton) rootView.findViewById(R.id.enviarIncidencia);
 
         /**
          * Configurem el botons
