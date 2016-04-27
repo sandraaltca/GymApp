@@ -3,8 +3,6 @@ package com.example.sandra.gymapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
@@ -22,11 +20,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.animation.AccelerateInterpolator;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -35,7 +31,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sandra.gymapp.firebasefile.User;
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -106,8 +101,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 ref.authWithPassword(mEmailView.getText().toString(), mPasswordView.getText().toString(), new Firebase.AuthResultHandler() {
                     @Override
                     public void onAuthenticated(AuthData authData) {
-                        System.out.println("User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
+                        System.out.println("Cliente ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
+                        String uid = authData.getUid();
                         Intent i = new Intent(getBaseContext(), MainActivity.class);
+                        i.putExtra("uid", uid);
                         startActivity(i);
                     }
 
