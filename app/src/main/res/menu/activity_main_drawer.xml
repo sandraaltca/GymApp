@@ -25,11 +25,11 @@
             <item
                 android:id="@+id/maquina_qr"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Incidencias" />
+                android:title="¿Como utilitzar está máquina?" />
             <item
                 android:id="@+id/maquina_incidencia"
                 android:icon="@drawable/ic_menu_send"
-                android:title="¿Como utilitzar está máquina?" />
+                android:title="Incidencies" />
         </menu>
     </item>
 
