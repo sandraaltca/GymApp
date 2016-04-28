@@ -95,7 +95,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             public void onClick(View view) {
 
 
-                Firebase ref = new Firebase("https://fiery-inferno-9835.firebaseio.com/");
+                Firebase ref = new Firebase("https://testgimmapp.firebaseio.com/");
 
 
                 ref.authWithPassword(mEmailView.getText().toString(), mPasswordView.getText().toString(), new Firebase.AuthResultHandler() {
