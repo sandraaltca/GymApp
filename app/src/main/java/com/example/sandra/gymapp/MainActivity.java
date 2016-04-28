@@ -19,6 +19,7 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Fragment fragment;
+    public static String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        Intent i = getIntent();
+        uid =  i.getStringExtra("uid");
+
     }
 
     @Override
@@ -88,6 +92,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.tu_perfil) {
             i = new Intent(getBaseContext(),Tuperfil.class);
+            i.putExtra("uid", uid);
             startActivity(i);
         } else if (id == R.id.tu_rutina) {
             fragment = new TuRutina();

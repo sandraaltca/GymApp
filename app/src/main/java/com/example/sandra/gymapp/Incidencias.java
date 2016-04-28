@@ -32,7 +32,7 @@ public class Incidencias extends Fragment {
     private TextView tvResult;
     private ImageButton buttonReader;
     private ImageButton enviar;
-
+    private String uid;
     public Incidencias() {
         // Required empty public constructor
     }
@@ -44,7 +44,7 @@ public class Incidencias extends Fragment {
 
 
         View rootView = inflater.inflate(R.layout.fragment_incidencias, container, false);
-
+       uid = MainActivity.uid;
         /**
          * Creem una referencia a firebase.
          */
@@ -65,6 +65,8 @@ public class Incidencias extends Fragment {
          */
         configuracioButoQr();
         configuracioButoEnviar();
+
+
 
         return rootView;
     }
@@ -104,10 +106,11 @@ public class Incidencias extends Fragment {
                 Incidencia incidencia = new Incidencia();
                 incidencia.setIdMaquina(tvResult.getText().toString());
                 incidencia.setRevisat(false);
-                incidencia.setUser("sandra proba");
+                incidencia.setUser(uid);
                 incidencia.setIncidencia(missatgeIncidencia.getText().toString());
                 incidencia.setTipusIncidencia(tipusdeIncidencia.getText().toString());
                 incidencia.setData(extreureDataActual());
+
 
                 pujarIncidencia(incidencia);
                 missatgeIncidencia.setText("");

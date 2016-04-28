@@ -4,18 +4,22 @@ public class Cliente {
 
     private String nombre;
     private String apellido;
+    private String apellido2;
+    private String dni;
     private String UID;
     private String email;
-    private String password;
-    private String key;
+    private String foto;
+    private String nSocio;
     private int edad;
+    //private String fecha de nacimiento
     private String direccion;
     private String telf;
     private String sexo;
 
 
+    public Cliente(){
 
-    public Cliente() {}
+    }
 
     public String getNombre() {
         return nombre;
@@ -49,20 +53,20 @@ public class Cliente {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getFoto() {
+        return foto;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
-    public String getKey() {
-        return key;
+    public String getnSocio() {
+        return nSocio;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setnSocio(String nSocio) {
+        this.nSocio = nSocio;
     }
 
     public int getEdad() {
@@ -96,9 +100,6 @@ public class Cliente {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
-
-
-
 
 
 }

@@ -48,7 +48,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Juanito Pepito lele"
                     android:id="@+id/nomPerfil"
                     android:layout_toRightOf="@+id/imageView2"
                     android:layout_alignBottom="@+id/imageView2"
@@ -67,7 +66,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="987654321456"
                     android:id="@+id/numSoci"
                     android:layout_below="@+id/imageView2"
                     android:layout_alignLeft="@+id/nomPerfil"
@@ -128,7 +126,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="639 789 456"
                     android:id="@+id/telfPerfil"
                     android:layout_toRightOf="@+id/imageView3"
                     android:layout_alignBottom="@+id/imageView3"
@@ -155,7 +152,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="example@poblenou.org"
                     android:id="@+id/emailPerfil"
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/imageView3"
@@ -183,7 +179,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="C/ Josep Llimona n 3 "
                     android:id="@+id/direccioPerfil"
                     android:layout_alignBottom="@+id/imageView5"
                     android:layout_alignLeft="@+id/emailPerfil"
