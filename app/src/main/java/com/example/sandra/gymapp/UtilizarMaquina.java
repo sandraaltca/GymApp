@@ -32,10 +32,9 @@ public class UtilizarMaquina extends Fragment {
     private Firebase maquinaRef;
     private Firebase ref;
     private ListView listStep;
-    private String idmaquina;
     private ImageButton butonqrMaquines;
 
-    private ArrayAdapterStep adapter;
+
 
     public UtilizarMaquina() {
         // Required empty public constructor
@@ -46,6 +45,11 @@ public class UtilizarMaquina extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+        /**
+         * ocultem butó fab
+         */
+
         View rootView =inflater.inflate(R.layout.fragment_utilizar_maquina, container, false);
         /**
          * Creo referencia firebase
@@ -75,9 +79,7 @@ public class UtilizarMaquina extends Fragment {
     }
 
     private void configuracioButoQr() {
-/*
-        //MainActivity.fab.setImageResource(R.id.butoQR);
-        MainActivity.fab.setOnClickListener(new View.OnClickListener() {
+        butonqrMaquines.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
@@ -90,14 +92,16 @@ public class UtilizarMaquina extends Fragment {
                 }
             }
         });
-*/
-
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if((requestCode == 0) && (resultCode == -1)) {
           //  updateUITextViews(data.getStringExtra("SCAN_RESULT"), data.getStringExtra("SCAN_RESULT_FORMAT"));
+
+            Intent i = new Intent(getContext(),StepMaquina.class);
+            i.putExtra("id",data.getStringExtra("SCAN_RESULT"));
+            startActivity(i);
         } else {
 
         }
@@ -106,53 +110,14 @@ public class UtilizarMaquina extends Fragment {
     private void handleResult(IntentResult scanResult) {
         if (scanResult != null) {
            // updateUITextViews(scanResult.getContents(), scanResult.getFormatName());
+            Intent i = new Intent(getContext(),StepMaquina.class);
+            i.putExtra("id",scanResult.getContents());
+            startActivity(i);
         } else {
             Toast.makeText(getContext(), "No s'ha pogut lleguir cap codi Qr", Toast.LENGTH_SHORT).show();
         }
     }
-/*
-    private void updateUITextViews(String scan_result, String scan_result_format) {
 
-        idmaquina = scan_result;
-        Query queryRef = maquinaRef.orderByChild("id").equalTo(idmaquina);
-        queryRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot snapshot, String previousChild) {
-                Maquina a=  snapshot.getValue(Maquina.class);
-                ArrayList steps = a.getSteps();
-
-                adapter = new ArrayAdapterStep(
-                        getContext(),
-                        R.layout.list_maquines_util,
-                        steps
-                );
-                listStep.setAdapter(adapter);
-
-
-            }
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-        });
-    }
-
-*/
 
 
     /**

@@ -45,8 +45,7 @@ public class ContactaCentro extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_contacta_centro, container, false);
         inputText = (EditText) rootView.findViewById(R.id.messageInput);
         nomsUsuari();
-        //Ocultamos el FloatingButton
-        MainActivity.fab.hide();
+
 
         Firebase.setAndroidContext(getContext());
         // Setup our Firebase mFirebaseRef
