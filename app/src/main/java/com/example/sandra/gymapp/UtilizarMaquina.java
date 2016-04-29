@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -15,12 +16,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sandra.gymapp.classesjava.InfoGym;
 import com.example.sandra.gymapp.classesjava.Maquina;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
+import com.firebase.ui.FirebaseListAdapter;
 import com.google.zxing.integration.android.IntentResult;
 
 import java.util.ArrayList;
@@ -28,10 +31,10 @@ import java.util.ArrayList;
 public class UtilizarMaquina extends Fragment {
     private Firebase maquinaRef;
     private Firebase ref;
-    private ImageButton buttonReader;
-    private String idmaquina;
     private ListView listStep;
-    private TextView nom;
+    private String idmaquina;
+    private ImageButton butonqrMaquines;
+
     private ArrayAdapterStep adapter;
 
     public UtilizarMaquina() {
@@ -53,14 +56,28 @@ public class UtilizarMaquina extends Fragment {
         /**
          * Instanciem objectes layout.
          */
-        buttonReader = (ImageButton) rootView.findViewById(R.id.qrlectormaquina);
-        listStep = (ListView)rootView.findViewById(R.id.listStep);
-        nom = (TextView)rootView.findViewById(R.id.nomMaquina);
+        listStep = (ListView)rootView.findViewById(R.id.nomMaquinaLlistaDispo);
+        butonqrMaquines =(ImageButton)rootView.findViewById(R.id.butonqrMaquines);
+
         configuracioButoQr();
+        configuracioLlistaMaquines();
         return rootView;
     }
+    private void configuracioLlistaMaquines(){
+        FirebaseListAdapter adapter = new FirebaseListAdapter<Maquina>(getActivity(), Maquina.class, R.layout.list_maquines, maquinaRef) {
+            @Override
+            protected void populateView(View v, Maquina info, int position) {
+                TextView nom = (TextView) v.findViewById(R.id.nomMaquinaLlistaDispo);
+                nom.setText(info.getNom());
+            }
+        };
+        listStep.setAdapter(adapter);
+    }
+
     private void configuracioButoQr() {
-        buttonReader.setOnClickListener(new View.OnClickListener() {
+/*
+        //MainActivity.fab.setImageResource(R.id.butoQR);
+        MainActivity.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
@@ -70,16 +87,17 @@ public class UtilizarMaquina extends Fragment {
                     startActivityForResult(intent, 0);
                 } catch (ActivityNotFoundException exception) {
 
-
                 }
             }
         });
+*/
+
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if((requestCode == 0) && (resultCode == -1)) {
-            updateUITextViews(data.getStringExtra("SCAN_RESULT"), data.getStringExtra("SCAN_RESULT_FORMAT"));
+          //  updateUITextViews(data.getStringExtra("SCAN_RESULT"), data.getStringExtra("SCAN_RESULT_FORMAT"));
         } else {
 
         }
@@ -87,12 +105,12 @@ public class UtilizarMaquina extends Fragment {
 
     private void handleResult(IntentResult scanResult) {
         if (scanResult != null) {
-            updateUITextViews(scanResult.getContents(), scanResult.getFormatName());
+           // updateUITextViews(scanResult.getContents(), scanResult.getFormatName());
         } else {
             Toast.makeText(getContext(), "No s'ha pogut lleguir cap codi Qr", Toast.LENGTH_SHORT).show();
         }
     }
-
+/*
     private void updateUITextViews(String scan_result, String scan_result_format) {
 
         idmaquina = scan_result;
@@ -101,7 +119,6 @@ public class UtilizarMaquina extends Fragment {
             @Override
             public void onChildAdded(DataSnapshot snapshot, String previousChild) {
                 Maquina a=  snapshot.getValue(Maquina.class);
-                nom.setText(a.getNom());
                 ArrayList steps = a.getSteps();
 
                 adapter = new ArrayAdapterStep(
@@ -135,7 +152,7 @@ public class UtilizarMaquina extends Fragment {
         });
     }
 
-
+*/
 
 
     /**
