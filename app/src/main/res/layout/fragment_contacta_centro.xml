@@ -15,25 +15,26 @@
         <LinearLayout
             android:id="@+id/listFooter"
             android:layout_width="fill_parent"
-            android:layout_height="75dp"
+            android:layout_height="60dp"
             android:layout_alignParentBottom="true"
             android:orientation="horizontal"
             android:background="#FFF">
 
             <EditText
                 android:id="@+id/message_input"
-                android:layout_weight="0.7"
+                android:layout_weight="0.62"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:inputType="text" />
 
-            <Button
-                android:id="@+id/sendButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="20dp"
-             android:text="Send"/>
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/senChat"
+                android:background="@drawable/ic_question_answer_indigo_a700_36dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp" />
 
         </LinearLayout>
 

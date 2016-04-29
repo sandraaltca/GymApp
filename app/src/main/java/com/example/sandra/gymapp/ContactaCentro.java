@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.database.DataSetObserver;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -43,7 +45,9 @@ public class ContactaCentro extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_contacta_centro, container, false);
         inputText = (EditText) rootView.findViewById(R.id.messageInput);
         nomsUsuari();
-
+        //Ocultamos el FloatingButton
+        MainActivity.fab.hide();
+        
         Firebase.setAndroidContext(getContext());
         // Setup our Firebase mFirebaseRef
         mFirebaseRef = new Firebase(FIREBASE_URL).child("Chat");
@@ -60,7 +64,9 @@ public class ContactaCentro extends Fragment {
             }
         });
 
-        rootView.findViewById(R.id.sendButton).setOnClickListener(new View.OnClickListener() {
+
+
+        rootView.findViewById(R.id.senChat).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 enviarMissatge();
