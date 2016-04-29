@@ -7,15 +7,17 @@ public class Chat {
 
     private String message;
     private String author;
+    private String uidUser;
 
     // Required default constructor for Firebase object mapping
     @SuppressWarnings("unused")
     private Chat() {
     }
 
-    public Chat(String message, String author) {
+    public Chat(String message, String author, String uidUser) {
         this.message = message;
         this.author = author;
+        this.uidUser = uidUser;
     }
 
     public String getMessage() {
@@ -24,5 +26,21 @@ public class Chat {
 
     public String getAuthor() {
         return author;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getUidUser() {
+        return uidUser;
+    }
+
+    public void setUidUser(String uidUser) {
+        this.uidUser = uidUser;
     }
 }

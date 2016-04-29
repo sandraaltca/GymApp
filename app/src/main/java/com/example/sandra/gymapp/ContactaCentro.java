@@ -115,7 +115,7 @@ public class ContactaCentro extends Fragment {
         String input = inputText.getText().toString();
         if (!input.equals("")) {
             // Create our 'model', a Chat object
-            Chat chat = new Chat(input, mUsername);
+            Chat chat = new Chat(input, mUsername,MainActivity.uid);
             // Create a new, auto-generated child of that chat location, and save our chat data there
             mFirebaseRef.push().setValue(chat);
             inputText.setText("");
