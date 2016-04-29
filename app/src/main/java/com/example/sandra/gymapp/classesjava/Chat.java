@@ -13,7 +13,7 @@ public class Chat {
     private Chat() {
     }
 
-    Chat(String message, String author) {
+    public Chat(String message, String author) {
         this.message = message;
         this.author = author;
     }
