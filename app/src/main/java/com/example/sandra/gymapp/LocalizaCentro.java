@@ -67,17 +67,13 @@ public class LocalizaCentro extends Fragment {
                 TextView email = (TextView) v.findViewById(R.id.emailCentre);
                 TextView telefon = (TextView) v.findViewById(R.id.telfCentre);
                 TextView semana = (TextView) v.findViewById(R.id.horariCentre);
-                TextView horari2 = (TextView)v.findViewById(R.id.horari2);
-                TextView horari3 = (TextView)v.findViewById(R.id.horari3);
-
-
+                
                 nom.setText(info.getNombreGym());
                 direccio.setText(info.getDireccionGym());
                 email.setText(info.getCorreoElectronicoGym());
                 telefon.setText(String.valueOf(info.getTelefonoGym()));
                 semana.setText("Lunes- viernes : " + info.getHorarioGym()[0]);
-                horari2.setText("Sabados : " + info.getHorarioGym()[1]);
-                horari3.setText("Domingos y festivos : " + info.getHorarioGym()[2]);
+
 
             }
         };
