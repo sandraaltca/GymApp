@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.31">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_store_indigo_a400_24dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="15dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom centre"
+            android:id="@+id/nomCentre"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_toEndOf="@+id/imageView" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:layout_below="@+id/imageView"
+            android:src="@drawable/ic_room_indigo_a400_24dp"
+            android:layout_alignLeft="@+id/imageView"
+            android:layout_alignStart="@+id/imageView"
+            android:layout_marginBottom="10dp"
+            android:layout_alignRight="@+id/imageView"
+            android:layout_alignEnd="@+id/imageView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ubicació"
+            android:id="@+id/ubicacioCentre"
+            android:layout_alignBottom="@+id/imageView2"
+            android:layout_toRightOf="@+id/imageView2"
+            android:layout_toEndOf="@+id/imageView2"
+            android:layout_marginLeft="15dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView3"
+            android:src="@drawable/ic_call_indigo_a400_24dp"
+            android:layout_below="@+id/imageView2"
+            android:layout_toLeftOf="@+id/ubicacioCentre"
+            android:layout_toStartOf="@+id/ubicacioCentre"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefon"
+            android:id="@+id/telfCentre"
+            android:layout_alignBottom="@+id/imageView3"
+            android:layout_toRightOf="@+id/imageView2"
+            android:layout_toEndOf="@+id/imageView2"
+            android:layout_marginLeft="15dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView4"
+            android:src="@drawable/ic_email_indigo_a400_24dp"
+            android:layout_below="@+id/imageView3"
+            android:layout_toLeftOf="@+id/telfCentre"
+            android:layout_toStartOf="@+id/telfCentre"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:id="@+id/emailCentre"
+            android:layout_alignBottom="@+id/imageView4"
+            android:layout_alignLeft="@+id/telfCentre"
+            android:layout_alignStart="@+id/telfCentre" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView5"
+            android:src="@drawable/ic_query_builder_indigo_a400_24dp"
+            android:layout_below="@+id/emailCentre"
+            android:layout_toLeftOf="@+id/emailCentre"
+            android:layout_toStartOf="@+id/emailCentre"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horario"
+            android:id="@+id/horariCentre"
+            android:layout_alignBottom="@+id/imageView5"
+            android:layout_alignLeft="@+id/emailCentre"
+            android:layout_alignStart="@+id/emailCentre" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horari2"
+            android:layout_below="@+id/horariCentre"
+            android:layout_toRightOf="@+id/imageView5"
+            android:layout_toEndOf="@+id/imageView5"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horari3"
+            android:layout_below="@+id/horari2"
+            android:layout_toRightOf="@+id/imageView5"
+            android:layout_toEndOf="@+id/imageView5" />
+    </RelativeLayout>
+</LinearLayout>
