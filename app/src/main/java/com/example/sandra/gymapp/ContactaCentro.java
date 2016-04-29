@@ -47,7 +47,7 @@ public class ContactaCentro extends Fragment {
         nomsUsuari();
         //Ocultamos el FloatingButton
         MainActivity.fab.hide();
-        
+
         Firebase.setAndroidContext(getContext());
         // Setup our Firebase mFirebaseRef
         mFirebaseRef = new Firebase(FIREBASE_URL).child("Chat");
@@ -74,7 +74,7 @@ public class ContactaCentro extends Fragment {
         });
         final ListView listView = (ListView)rootView.findViewById(R.id.chat);
         // Tell our list adapter that we only want 50 messages at a time
-        mChatListAdapter = new ChatListAdapter(mFirebaseRef.limit(50), getActivity(), R.layout.chat_missatge, mUsername);
+        mChatListAdapter = new ChatListAdapter(mFirebaseRef.limit(50), getActivity(), R.layout.chat_missatge, mUsername,getContext());
         listView.setAdapter(mChatListAdapter);
         mChatListAdapter.registerDataSetObserver(new DataSetObserver() {
             @Override
