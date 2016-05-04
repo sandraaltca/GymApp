@@ -28,7 +28,7 @@ public class CrearRutinaFragment extends Fragment {
         tabHost.setup(getActivity(), getFragmentManager(), android.R.id.tabcontent);
 
         //Creem les pestanyes
-        tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("Standard"), SesionsEspecials.class, null);
+        tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("Standard"), RutinesStandard.class, null);
         tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("Customize"), SesionesOrdinarias.class, null);
         tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("Calendario"), SesionesOrdinarias.class, null);
 

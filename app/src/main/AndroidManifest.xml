@@ -33,10 +33,10 @@
         <activity
             android:name=".Usuari.Tuperfil"
             android:label="@string/title_activity_tuperfil"
-            android:theme="@style/AppTheme.NoActionBar" >
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value="com.example.sandra.gymapp.MainActivity" />
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.sandra.gymapp.MainActivity" />
         </activity>
         <activity
             android:name=".Maquines.StepMaquina"
@@ -60,6 +60,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.sandra.gymapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".Rutina.DetailsRutina"
+            android:label="@string/title_activity_details_rutina"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
