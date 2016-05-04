@@ -11,22 +11,18 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.sandra.gymapp.classesjava.InfoGym;
 import com.example.sandra.gymapp.classesjava.Maquina;
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.Query;
 import com.firebase.ui.FirebaseListAdapter;
 import com.google.zxing.integration.android.IntentResult;
 
-import java.util.ArrayList;
+
 
 public class UtilizarMaquina extends Fragment {
     private Firebase maquinaRef;
@@ -60,7 +56,7 @@ public class UtilizarMaquina extends Fragment {
         /**
          * Instanciem objectes layout.
          */
-        listStep = (ListView)rootView.findViewById(R.id.nomMaquinaLlistaDispo);
+        listStep = (ListView)rootView.findViewById(R.id.nomLlistaDispo);
         butonqrMaquines =(ImageButton)rootView.findViewById(R.id.butonqrMaquines);
 
         configuracioButoQr();
@@ -68,7 +64,8 @@ public class UtilizarMaquina extends Fragment {
         return rootView;
     }
     private void configuracioLlistaMaquines(){
-        FirebaseListAdapter adapter = new FirebaseListAdapter<Maquina>(getActivity(), Maquina.class, R.layout.list_maquines, maquinaRef) {
+
+        final FirebaseListAdapter adapter = new FirebaseListAdapter<Maquina>(getActivity(), Maquina.class, R.layout.list_maquines, maquinaRef) {
             @Override
             protected void populateView(View v, Maquina info, int position) {
                 TextView nom = (TextView) v.findViewById(R.id.nomMaquinaLlistaDispo);
@@ -76,9 +73,21 @@ public class UtilizarMaquina extends Fragment {
             }
         };
         listStep.setAdapter(adapter);
+
+        listStep.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(getContext(), StepMaquinaFragment.class);
+                Maquina m= (Maquina) adapter.getItem(position);
+                i.putExtra("item", m.getId());
+                startActivity(i);
+            }
+        });
+
     }
 
     private void configuracioButoQr() {
+
         butonqrMaquines.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

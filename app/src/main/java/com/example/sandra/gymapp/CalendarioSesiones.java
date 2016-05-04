@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,8 +13,7 @@ import android.view.ViewGroup;
 
 public class CalendarioSesiones extends Fragment {
 
-
-    private OnFragmentInteractionListener mListener;
+    private FragmentTabHost tabHost;
 
     public CalendarioSesiones() {
         // Required empty public constructor
@@ -24,7 +24,16 @@ public class CalendarioSesiones extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calendario_sesiones, container, false);
+
+        View rootView =inflater.inflate(R.layout.fragment_calendario_sesiones, container, false);
+        tabHost= (FragmentTabHost) rootView.findViewById(android.R.id.tabhost);
+        tabHost.setup(getActivity(), getFragmentManager(), android.R.id.tabcontent);
+
+        //Creem les pestanyes
+        tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("Sesiones especiales"), SesionsEspecials.class, null);
+        tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("Sesiones ordinarias"), SesionesOrdinarias.class, null);
+
+        return rootView;
     }
 
 

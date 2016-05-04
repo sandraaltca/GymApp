@@ -17,7 +17,7 @@
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="300dp"
-            android:id="@+id/nomMaquinaLlistaDispo"
+            android:id="@+id/nomLlistaDispo"
             android:layout_marginRight="5dp"
             android:layout_below="@+id/nomMaquina"
             android:layout_marginTop="30dp"
