@@ -27,6 +27,7 @@ import java.util.Date;
 
 
 public class Incidencias extends Fragment {
+
     private Firebase incidenciasRef;
     private Firebase ref;
     private EditText tipusdeIncidencia;
@@ -46,7 +47,7 @@ public class Incidencias extends Fragment {
 
 
         View rootView = inflater.inflate(R.layout.fragment_incidencias, container, false);
-       uid = MainActivity.uid;
+        uid = MainActivity.uid;
         /**
          * Creem una referencia a firebase.
          */
@@ -112,8 +113,7 @@ public class Incidencias extends Fragment {
                 incidencia.setIncidencia(missatgeIncidencia.getText().toString());
                 incidencia.setTipusIncidencia(tipusdeIncidencia.getText().toString());
                 incidencia.setData(extreureDataActual());
-
-
+                incidencia.setId(uid+extreureDataActual());
                 pujarIncidencia(incidencia);
                 missatgeIncidencia.setText("");
                 tipusdeIncidencia.setText("");

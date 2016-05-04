@@ -29,7 +29,7 @@ public class CrearRutinaFragment extends Fragment {
 
         //Creem les pestanyes
         tabHost.addTab(tabHost.newTabSpec("tab1").setIndicator("Standard"), RutinesStandard.class, null);
-        tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("Customize"), SesionesOrdinarias.class, null);
+        tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("Customize"), RutinesCustomizadas.class, null);
         tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("Calendario"), SesionesOrdinarias.class, null);
 
 
