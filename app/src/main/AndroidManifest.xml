@@ -9,7 +9,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -26,16 +25,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".Tuperfil"
             android:label="@string/title_activity_tuperfil"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".StepMaquina"
+            android:label="@string/title_activity_step_maquina"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

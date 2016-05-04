@@ -14,36 +14,35 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:layout_margin="0dp">
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/qrlectormaquina"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:background="@mipmap/qr"
-            android:layout_marginRight="20dp" />
-
         <ListView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/listStep"
-            android:layout_below="@+id/qrlectormaquina"
-            android:layout_marginRight="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="0dp" />
+            android:layout_height="300dp"
+            android:id="@+id/nomMaquinaLlistaDispo"
+            android:layout_marginRight="5dp"
+            android:layout_below="@+id/nomMaquina"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="5dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Large Text"
+            android:text="Listado máquinas :"
             android:id="@+id/nomMaquina"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:textStyle="bold" />
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/butonqrMaquines"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:adjustViewBounds="false"
+            android:background="@drawable/qrscanicon" />
 
     </RelativeLayout>
 
