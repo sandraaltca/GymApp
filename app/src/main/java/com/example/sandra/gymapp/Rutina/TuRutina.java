@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.Rutina;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.sandra.gymapp.R;
 
 
 public class TuRutina extends Fragment {

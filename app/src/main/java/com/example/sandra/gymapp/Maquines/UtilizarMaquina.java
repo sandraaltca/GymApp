@@ -1,14 +1,11 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.Maquines;
 
 import android.content.ActivityNotFoundException;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -17,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Maquina;
 import com.firebase.client.Firebase;
 import com.firebase.ui.FirebaseListAdapter;

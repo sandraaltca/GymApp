@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.Centro;
 
 import android.database.DataSetObserver;
 import android.net.Uri;
@@ -14,6 +14,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.sandra.gymapp.ArrayAdapter.ChatListAdapter;
+import com.example.sandra.gymapp.MainActivity;
+import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Chat;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -110,7 +112,7 @@ public class ContactaCentro extends Fragment {
         String input = inputText.getText().toString();
         if (!input.equals("")) {
             // Create our 'model', a Chat object
-            Chat chat = new Chat(input, mUsername,MainActivity.uid);
+            Chat chat = new Chat(input, mUsername, MainActivity.uid);
             // Create a new, auto-generated child of that chat location, and save our chat data there
             mFirebaseRef.push().setValue(chat);
             inputText.setText("");

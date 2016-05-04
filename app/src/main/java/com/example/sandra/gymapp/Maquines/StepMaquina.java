@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.Maquines;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -7,12 +7,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class Sesions extends AppCompatActivity {
+import com.example.sandra.gymapp.R;
+
+public class StepMaquina extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sesions);
+        setContentView(R.layout.activity_step_maquina);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

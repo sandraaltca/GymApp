@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.Sesiones;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.sandra.gymapp.ArrayAdapter.ArrayListAdapterSesions;
 import com.example.sandra.gymapp.Dialog.DateDialog;
+import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Sesion;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;

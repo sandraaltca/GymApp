@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.Maquines;
 
 import android.content.Intent;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.sandra.gymapp.ArrayAdapter.ArrayAdapterStep;
+import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Maquina;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;

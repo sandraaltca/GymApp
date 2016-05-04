@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.Maquines;
 
 
 import android.content.ActivityNotFoundException;
@@ -15,6 +15,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sandra.gymapp.MainActivity;
+import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Incidencia;
 import com.firebase.client.Firebase;
 
