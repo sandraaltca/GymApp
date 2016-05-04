@@ -100,8 +100,8 @@ public class MainActivity extends AppCompatActivity
             fragment = new TuRutina();
             transaccion = true;
         } else if (id == R.id.calendario_sesiones) {
-            fragment = new CalendarioSesiones();
-            transaccion = true;
+           i = new Intent(getBaseContext(), Sesions.class);
+            startActivity(i);
         } else if (id == R.id.video_sesiones) {
             fragment = new VideoSesiones();
             transaccion = true;
