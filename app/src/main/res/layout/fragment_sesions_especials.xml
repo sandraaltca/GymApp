@@ -1,0 +1,160 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sandra.gymapp.SesionsEspecials">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout">
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/sesio1"
+                android:background="@mipmap/zumba"
+                android:layout_marginLeft="23dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="10dp" />
+
+            <ImageButton
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:id="@+id/sesio2"
+                android:background="@mipmap/bodycombat"
+                android:layout_alignBottom="@+id/sesio1"
+                android:layout_toLeftOf="@+id/textView3"
+                android:layout_toStartOf="@+id/textView3" />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/sesio3"
+                android:background="@mipmap/step"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/textView3"
+                android:layout_alignStart="@+id/textView3"
+                android:layout_marginTop="10dp" />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/sesio4"
+                android:background="@mipmap/bodypump"
+                android:layout_alignParentTop="true"
+                android:layout_alignRight="@+id/textView4"
+                android:layout_alignEnd="@+id/textView4"
+                android:layout_marginTop="10dp" />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/sesio5"
+                android:background="@mipmap/fitness"
+                android:layout_above="@+id/textView4"
+                android:layout_toRightOf="@+id/sesio4"
+                android:layout_toEndOf="@+id/sesio4"
+                android:layout_marginLeft="21dp"
+                android:layout_marginStart="21dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zumba"
+                android:id="@+id/textView"
+                android:textSize="10dp"
+                android:layout_alignTop="@+id/textView4"
+                android:layout_alignLeft="@+id/sesio1"
+                android:layout_alignStart="@+id/sesio1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B. Combat"
+                android:id="@+id/textView2"
+                android:textSize="10dp"
+                android:layout_below="@+id/sesio2"
+                android:layout_toRightOf="@+id/textView"
+                android:layout_toEndOf="@+id/textView"
+                android:layout_marginLeft="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="    Step"
+                android:id="@+id/textView3"
+                android:textSize="10dp"
+                android:layout_alignTop="@+id/textView2"
+                android:layout_toRightOf="@+id/textView2"
+                android:layout_toEndOf="@+id/textView2"
+                android:layout_marginLeft="23dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B. Pump"
+                android:id="@+id/textView4"
+                android:textSize="10dp"
+                android:layout_below="@+id/sesio3"
+                android:layout_toRightOf="@+id/textView3"
+                android:layout_toEndOf="@+id/textView3"
+                android:layout_marginLeft="40dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fitness"
+                android:id="@+id/textView5"
+                android:textSize="10dp"
+                android:layout_below="@+id/sesio5"
+                android:layout_alignRight="@+id/sesio5"
+                android:layout_alignEnd="@+id/sesio5" />
+        </RelativeLayout>
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/dataPic"
+            android:layout_below="@+id/relativeLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/ic_date_range_indigo_a700_18dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00/00/0000"
+            android:id="@+id/dateText"
+            android:layout_below="@+id/relativeLayout"
+            android:layout_toRightOf="@+id/dataPic"
+            android:layout_toEndOf="@+id/dataPic"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="5dp" />
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/listSesions"
+            android:layout_below="@+id/dataPic"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp" />
+
+    </RelativeLayout>
+
+</FrameLayout>

@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.ArrayAdapter;
 
 
 import android.app.Activity;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.sandra.gymapp.R;
 import com.firebase.client.Query;
 
 import com.example.sandra.gymapp.classesjava.*;

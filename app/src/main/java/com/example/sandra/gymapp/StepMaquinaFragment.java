@@ -7,8 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
+import com.example.sandra.gymapp.ArrayAdapter.ArrayAdapterStep;
 import com.example.sandra.gymapp.classesjava.Maquina;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;

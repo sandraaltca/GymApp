@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.ArrayAdapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Step;
 import com.squareup.picasso.Picasso;
 

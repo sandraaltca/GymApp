@@ -1,12 +1,8 @@
 package com.example.sandra.gymapp;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.database.DataSetObserver;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -16,8 +12,8 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.example.sandra.gymapp.ArrayAdapter.ChatListAdapter;
 import com.example.sandra.gymapp.classesjava.Chat;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
