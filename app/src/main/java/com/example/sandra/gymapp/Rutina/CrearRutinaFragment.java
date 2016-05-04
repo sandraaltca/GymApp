@@ -32,6 +32,9 @@ public class CrearRutinaFragment extends Fragment {
         tabHost.addTab(tabHost.newTabSpec("tab2").setIndicator("Customize"), SesionesOrdinarias.class, null);
         tabHost.addTab(tabHost.newTabSpec("tab3").setIndicator("Calendario"), SesionesOrdinarias.class, null);
 
+
+
+
         return rootView;
     }
 }
