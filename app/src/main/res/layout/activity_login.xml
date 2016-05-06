@@ -92,4 +92,14 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Has olvidado la contraseña ?"
+        android:id="@+id/olvidarPass"
+        android:background="#00ffffff"
+        android:layout_below="@+id/email_sign_in_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp" />
+
 </RelativeLayout>
