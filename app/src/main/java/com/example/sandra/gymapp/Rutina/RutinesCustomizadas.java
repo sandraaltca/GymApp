@@ -64,56 +64,9 @@ public class RutinesCustomizadas extends Fragment {
 
     private void configurarLlista(){
 
-        new AsyncJob.AsyncJobBuilder<Boolean>()
-                .doInBackground(new AsyncJob.AsyncAction<Boolean>() {
-                    @Override
-                    public Boolean doAsync() {
-                        queryExercicis();
-                        return true;
-                    }
-                })
-                .doWhenFinished(new AsyncJob.AsyncResultAction() {
-                    @Override
-                    public void onResult(Object o) {
-                    }
-                }).create().start();
-
-        itemsAdapter = new ArrayListAdapterRutines(getContext(), R.layout.list_exercici_rutina, rutines);
+        Query queryRef = refRutinesPersonalitzades.orderByChild("uidUser").equalTo(uidUser);
+        itemsAdapter = new ArrayListAdapterRutines(queryRef, getActivity(), R.layout.list_exercici_rutina,getContext());
         rutinesCustom.setAdapter(itemsAdapter);
     }
-    private void queryExercicis(){
 
-        Query queryRef = refRutinesPersonalitzades.orderByChild("uidUser").equalTo(uidUser);
-
-        queryRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot snapshot, String previousChild) {
-                RutinaCustomize a = snapshot.getValue(RutinaCustomize.class);
-                rutines.add(a);
-                itemsAdapter.notifyDataSetChanged();
-            }
-
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-
-            }
-
-
-        });
-    }
 }
