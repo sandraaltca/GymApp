@@ -21,6 +21,7 @@ import com.example.sandra.gymapp.classesjava.Chat;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.firebase.client.Query;
 import com.firebase.client.ValueEventListener;
 
 
@@ -70,7 +71,10 @@ public class ContactaCentro extends Fragment {
         });
         final ListView listView = (ListView)rootView.findViewById(R.id.chat);
         // Tell our list adapter that we only want 50 messages at a time
-        mChatListAdapter = new ChatListAdapter(mFirebaseRef.limit(50), getActivity(), R.layout.chat_missatge, mUsername,getContext());
+
+
+        Query queryRef = mFirebaseRef.orderByChild("uidUser").equalTo(MainActivity.uid);
+        mChatListAdapter = new ChatListAdapter(queryRef, getActivity(), R.layout.chat_missatge, mUsername,getContext());
         listView.setAdapter(mChatListAdapter);
         mChatListAdapter.registerDataSetObserver(new DataSetObserver() {
             @Override

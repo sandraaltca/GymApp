@@ -72,6 +72,7 @@ public class RutinesStandard extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(getContext(), DetailsRutina.class);
+                i.putExtra("id","standard");
                 i.putExtra("item", (RutinaStandard) adapter.getItem(position));
                 startActivity(i);
             }
