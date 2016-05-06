@@ -98,6 +98,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 }
                 return false;
             }
+            
         });
 
         final Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
