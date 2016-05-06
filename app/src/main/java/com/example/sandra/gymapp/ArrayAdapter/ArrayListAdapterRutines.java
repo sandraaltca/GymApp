@@ -24,6 +24,7 @@ import java.util.ArrayList;
  */
 public class ArrayListAdapterRutines extends FirebaseListAdapter<RutinaCustomize> {
     private Context context;
+    private RutinaCustomize r ;
 
     public ArrayListAdapterRutines(Query ref, Activity activity, int layout, Context context) {
         super(activity, RutinaCustomize.class, layout, ref);
@@ -38,8 +39,6 @@ public class ArrayListAdapterRutines extends FirebaseListAdapter<RutinaCustomize
         TextView temps = (TextView)convertView.findViewById(R.id.tempsRutina);
         TextView nivell = (TextView)convertView.findViewById(R.id.nivelRutina);
         ImageView fotorutina = (ImageView)convertView.findViewById(R.id.imageView);
-
-
 
         nom.setText(info.getNom());
         temps.setText(info.getTemps()+" min");

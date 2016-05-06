@@ -24,13 +24,11 @@ public class ArrayListAdapterExerciciRutina extends ArrayAdapter<Exercici> {
 
     public ArrayListAdapterExerciciRutina(Context context, int resource, ArrayList<Exercici> items) {
         super(context, resource, items);
-        System.out.println("ADAPTER-------------------------------------------");
     }
 
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
 
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());

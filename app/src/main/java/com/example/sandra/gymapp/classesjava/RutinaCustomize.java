@@ -1,11 +1,12 @@
 package com.example.sandra.gymapp.classesjava;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by 47419119l on 04/05/16.
  */
-public class RutinaCustomize {
+public class RutinaCustomize implements Serializable {
     private String id;
     private String nom;
     private int temps;

@@ -10,6 +10,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.arasthel.asyncjob.AsyncJob;
@@ -18,6 +19,7 @@ import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
 import com.example.sandra.gymapp.MainActivity;
 import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.RutinaCustomize;
+import com.example.sandra.gymapp.classesjava.RutinaStandard;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -67,6 +69,16 @@ public class RutinesCustomizadas extends Fragment {
         Query queryRef = refRutinesPersonalitzades.orderByChild("uidUser").equalTo(uidUser);
         itemsAdapter = new ArrayListAdapterRutines(queryRef, getActivity(), R.layout.list_exercici_rutina,getContext());
         rutinesCustom.setAdapter(itemsAdapter);
+
+        rutinesCustom.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent i = new Intent(getContext(), DetailsRutina.class);
+                i.putExtra("id", "custom");
+                i.putExtra("item",itemsAdapter.getItem(position));
+                startActivity(i);
+            }
+        });
     }
 
 }

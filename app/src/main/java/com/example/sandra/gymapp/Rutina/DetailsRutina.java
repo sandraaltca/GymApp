@@ -15,6 +15,7 @@ import com.example.sandra.gymapp.ArrayAdapter.ArrayListAdapterExerciciRutina;
 import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
 import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Exercici;
+import com.example.sandra.gymapp.classesjava.RutinaCustomize;
 import com.example.sandra.gymapp.classesjava.RutinaStandard;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
@@ -30,6 +31,7 @@ public class DetailsRutina extends AppCompatActivity {
     Firebase ref;
     Firebase  infoGymRef;
     private RutinaStandard item;
+    private RutinaCustomize custom;
     private ImageView imagetoolbar;
     private TextView nivell, temps, descrip;
     private ListView listEx;
@@ -67,16 +69,23 @@ public class DetailsRutina extends AppCompatActivity {
          * Agafem el intent
          */
         Intent i = getIntent();
-        item = (RutinaStandard) i.getSerializableExtra("item");
         String id = i.getStringExtra("id");
-        exercicis = item.getExercicis();
         if(id.equals("standard")) {
+            item = (RutinaStandard) i.getSerializableExtra("item");
+            exercicis = item.getExercicis();
+            configuracioLlista();
             condiguracioDetailsStandard();
         }else{
+            custom = (RutinaCustomize) i.getSerializableExtra("item");
+            exercicis = custom.getExercicis();
+            configuracioLlista();
+            condiguracioDetailsCustom();
+
 
         }
-        configuracioLlista();
+
     }
+
     private void condiguracioDetailsStandard(){
         toolbar_layout.setTitle("  ");
 
@@ -92,6 +101,25 @@ public class DetailsRutina extends AppCompatActivity {
         descrip.setText(item.getDescripcio());
 
         nomRutina = item.getNom();
+
+
+    }
+
+    private void condiguracioDetailsCustom(){
+        toolbar_layout.setTitle("  ");
+
+        Picasso.with(getBaseContext())
+                .load(custom.getImage())
+                .fit()
+                .into(imagetoolbar);
+
+        nivell.setText(custom.getNivell());
+
+        temps.setText(custom.getTemps() + " min");
+
+        descrip.setText(custom.getDescripcio());
+
+        nomRutina = custom.getNom();
 
 
     }
@@ -138,9 +166,9 @@ public class DetailsRutina extends AppCompatActivity {
     private void addEventToCalendar(){
         Calendar cal = Calendar.getInstance();
 
-        cal.set(Calendar.DAY_OF_MONTH, 29);
-        cal.set(Calendar.MONTH, 4);
-        cal.set(Calendar.YEAR, 2013);
+        cal.set(Calendar.DAY_OF_MONTH, 1);
+        cal.set(Calendar.MONTH, 1);
+        cal.set(Calendar.YEAR, 2016);
 
         cal.set(Calendar.HOUR_OF_DAY, 22);
         cal.set(Calendar.MINUTE, 45);
