@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.example.sandra.gymapp.ArrayAdapter.ArrayAdapterStep;
+import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
 import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Maquina;
 import com.firebase.client.ChildEventListener;
@@ -35,9 +36,12 @@ public class StepMaquinaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        View rootView = inflater.inflate(R.layout.fragment_step_maquina, container, false);
-        Firebase.setAndroidContext(getContext());
-        ref = new Firebase("https://testgimmapp.firebaseio.com/");
-        maquinaRef = ref.child("Maquines");
+
+        FireBaseConfiguracio fireBaseConfiguracio = new FireBaseConfiguracio();
+        fireBaseConfiguracio.configFirebase(getContext());
+        maquinaRef   =fireBaseConfiguracio.getMaquines();
+
+
         Intent i = getActivity().getIntent();
         idmaquina =i.getStringExtra("id");
         listStep = (ListView) rootView.findViewById(R.id.listStep);

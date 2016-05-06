@@ -37,6 +37,8 @@ public class RutinesStandard extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView=inflater.inflate(R.layout.fragment_rutines_standard, container, false);
+
+
         Firebase.setAndroidContext(getContext());
         ref = new Firebase("https://testgimmapp.firebaseio.com/");
         infoGymRef = ref.child("RutinasStandard");

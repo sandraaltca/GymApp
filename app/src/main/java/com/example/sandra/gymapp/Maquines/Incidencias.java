@@ -15,6 +15,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
 import com.example.sandra.gymapp.MainActivity;
 import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Incidencia;
@@ -51,9 +52,10 @@ public class Incidencias extends Fragment {
         /**
          * Creem una referencia a firebase.
          */
-        Firebase.setAndroidContext(getContext());
-        ref = new Firebase("https://testgimmapp.firebaseio.com/");
-        incidenciasRef = ref.child("Incidencias");
+        FireBaseConfiguracio fireBaseConfiguracio = new FireBaseConfiguracio();
+        fireBaseConfiguracio.configFirebase(getContext());
+        incidenciasRef  =fireBaseConfiguracio.getIncidencias();
+
         /**
          * Instanciem els objectes
          */

@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.sandra.gymapp.ArrayAdapter.ArrayListAdapterExerciciRutina;
+import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
 import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Exercici;
 import com.example.sandra.gymapp.classesjava.RutinaStandard;
@@ -38,9 +39,12 @@ public class DetailsRutina extends AppCompatActivity {
         setContentView(R.layout.activity_details_rutina);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Firebase.setAndroidContext(getBaseContext());
-        ref = new Firebase("https://testgimmapp.firebaseio.com/");
-        infoGymRef = ref.child("Exercicis");
+
+        FireBaseConfiguracio fireBaseConfiguracio = new FireBaseConfiguracio();
+        fireBaseConfiguracio.configFirebase(getBaseContext());
+        infoGymRef    =fireBaseConfiguracio.getExercicis();
+
+
         toolbar_layout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         imagetoolbar = (ImageView)findViewById(R.id.image_appbar);
         nivell = (TextView)findViewById(R.id.nivelDetailRutina);

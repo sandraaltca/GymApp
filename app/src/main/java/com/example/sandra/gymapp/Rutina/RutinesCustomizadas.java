@@ -2,6 +2,7 @@ package com.example.sandra.gymapp.Rutina;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,12 +12,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.arasthel.asyncjob.AsyncJob;
+import com.example.sandra.gymapp.ArrayAdapter.ArrayListAdapterRutines;
+import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
 import com.example.sandra.gymapp.MainActivity;
 import com.example.sandra.gymapp.R;
+import com.example.sandra.gymapp.classesjava.RutinaCustomize;
+import com.firebase.client.ChildEventListener;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.Query;
+
+import java.util.ArrayList;
 
 public class RutinesCustomizadas extends Fragment {
     private ListView rutinesCustom;
-    private String idUser;
+    private ArrayList<RutinaCustomize> rutines;
+    private String uidUser;
+    private ArrayListAdapterRutines itemsAdapter;
+    private Firebase refRutinesPersonalitzades;
     public RutinesCustomizadas() {
         // Required empty public constructor
     }
@@ -32,16 +47,73 @@ public class RutinesCustomizadas extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(getContext(),FormulariRutinesCustom.class);
+                startActivity(intent);
             }
         });
-        rutinesCustom= (ListView)rootView.findViewById(R.id.rutinesCustom);
-        idUser = MainActivity.uid;
+        rutines = new ArrayList<>();
+        FireBaseConfiguracio fireBaseConfiguracio = new FireBaseConfiguracio();
+        fireBaseConfiguracio.configFirebase(getContext());
+        refRutinesPersonalitzades = fireBaseConfiguracio.getRutinesCustomizades();
 
+        rutinesCustom= (ListView)rootView.findViewById(R.id.rutinesCustom);
+        uidUser = MainActivity.uid;
+        configurarLlista();
         return rootView;
     }
 
+    private void configurarLlista(){
+
+        new AsyncJob.AsyncJobBuilder<Boolean>()
+                .doInBackground(new AsyncJob.AsyncAction<Boolean>() {
+                    @Override
+                    public Boolean doAsync() {
+                        queryExercicis();
+                        return true;
+                    }
+                })
+                .doWhenFinished(new AsyncJob.AsyncResultAction() {
+                    @Override
+                    public void onResult(Object o) {
+                    }
+                }).create().start();
+
+        itemsAdapter = new ArrayListAdapterRutines(getContext(), R.layout.list_exercici_rutina, rutines);
+        rutinesCustom.setAdapter(itemsAdapter);
+    }
+    private void queryExercicis(){
+
+        Query queryRef = refRutinesPersonalitzades.orderByChild("uidUser").equalTo(uidUser);
+
+        queryRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot snapshot, String previousChild) {
+                RutinaCustomize a = snapshot.getValue(RutinaCustomize.class);
+                rutines.add(a);
+                itemsAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
 
 
+        });
+    }
 }

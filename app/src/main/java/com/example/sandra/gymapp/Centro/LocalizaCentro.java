@@ -7,6 +7,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
 import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.InfoGym;
 import com.firebase.client.DataSnapshot;
@@ -36,7 +37,6 @@ import com.firebase.ui.FirebaseListAdapter;
 
 public class LocalizaCentro extends Fragment {
     private Firebase infoGymRef;
-    private Firebase ref;
     private ListView listCentre;
     private MapView map;
     private IMapController mapController;
@@ -57,9 +57,11 @@ public class LocalizaCentro extends Fragment {
         /**
          * Contecem amb firebase.
          */
-        Firebase.setAndroidContext(getContext());
-        ref = new Firebase("https://testgimmapp.firebaseio.com/");
-        infoGymRef = ref.child("InfoGym");
+
+
+        FireBaseConfiguracio fireBaseConfiguracio = new FireBaseConfiguracio();
+        fireBaseConfiguracio.configFirebase(getContext());
+        infoGymRef =fireBaseConfiguracio.getInfoGym();
         /**
          * Objectes layout.
          */

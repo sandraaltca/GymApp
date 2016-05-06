@@ -63,7 +63,16 @@
         <activity
             android:name=".Rutina.DetailsRutina"
             android:label="@string/title_activity_details_rutina"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Rutina.FormulariRutinesCustom"
+            android:label="@string/title_activity_formulari_rutines_custom"
+            android:parentActivityName=".Rutina.CrearRutina"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.sandra.gymapp.Rutina.CrearRutina" />
+        </activity>
     </application>
 
 </manifest>

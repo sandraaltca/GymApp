@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.sandra.gymapp.ArrayAdapter.ChatListAdapter;
+import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
 import com.example.sandra.gymapp.MainActivity;
 import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Chat;
@@ -24,7 +25,6 @@ import com.firebase.client.ValueEventListener;
 
 
 public class ContactaCentro extends Fragment {
-    private static final String FIREBASE_URL = "https://testgimmapp.firebaseio.com/";
 
     private String mUsername;
     private Firebase mFirebaseRef;
@@ -44,10 +44,9 @@ public class ContactaCentro extends Fragment {
         inputText = (EditText) rootView.findViewById(R.id.messageInput);
         nomsUsuari();
 
-
-        Firebase.setAndroidContext(getContext());
-        // Setup our Firebase mFirebaseRef
-        mFirebaseRef = new Firebase(FIREBASE_URL).child("Chat");
+        FireBaseConfiguracio fireBaseConfiguracio = new FireBaseConfiguracio();
+        fireBaseConfiguracio.configFirebase(getContext());
+        mFirebaseRef =fireBaseConfiguracio.getRutinesChat();
 
 
         inputText = (EditText) rootView.findViewById(R.id.message_input);

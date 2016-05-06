@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
 import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Maquina;
 import com.firebase.client.Firebase;
@@ -48,9 +49,9 @@ public class UtilizarMaquina extends Fragment {
         /**
          * Creo referencia firebase
          */
-        Firebase.setAndroidContext(getContext());
-        ref = new Firebase("https://testgimmapp.firebaseio.com/");
-        maquinaRef = ref.child("Maquines");
+        FireBaseConfiguracio fireBaseConfiguracio = new FireBaseConfiguracio();
+        fireBaseConfiguracio.configFirebase(getContext());
+        maquinaRef   =fireBaseConfiguracio.getMaquines();
         /**
          * Instanciem objectes layout.
          */
