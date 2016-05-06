@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.Centro;
 
 import android.database.DataSetObserver;
 import android.net.Uri;
@@ -14,15 +14,18 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.sandra.gymapp.ArrayAdapter.ChatListAdapter;
+import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
+import com.example.sandra.gymapp.MainActivity;
+import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Chat;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
+import com.firebase.client.Query;
 import com.firebase.client.ValueEventListener;
 
 
 public class ContactaCentro extends Fragment {
-    private static final String FIREBASE_URL = "https://testgimmapp.firebaseio.com/";
 
     private String mUsername;
     private Firebase mFirebaseRef;
@@ -42,10 +45,9 @@ public class ContactaCentro extends Fragment {
         inputText = (EditText) rootView.findViewById(R.id.messageInput);
         nomsUsuari();
 
-
-        Firebase.setAndroidContext(getContext());
-        // Setup our Firebase mFirebaseRef
-        mFirebaseRef = new Firebase(FIREBASE_URL).child("Chat");
+        FireBaseConfiguracio fireBaseConfiguracio = new FireBaseConfiguracio();
+        fireBaseConfiguracio.configFirebase(getContext());
+        mFirebaseRef =fireBaseConfiguracio.getRutinesChat();
 
 
         inputText = (EditText) rootView.findViewById(R.id.message_input);
@@ -69,7 +71,10 @@ public class ContactaCentro extends Fragment {
         });
         final ListView listView = (ListView)rootView.findViewById(R.id.chat);
         // Tell our list adapter that we only want 50 messages at a time
-        mChatListAdapter = new ChatListAdapter(mFirebaseRef.limit(50), getActivity(), R.layout.chat_missatge, mUsername,getContext());
+
+
+        Query queryRef = mFirebaseRef.orderByChild("uidUser").equalTo(MainActivity.uid);
+        mChatListAdapter = new ChatListAdapter(queryRef, getActivity(), R.layout.chat_missatge, mUsername,getContext());
         listView.setAdapter(mChatListAdapter);
         mChatListAdapter.registerDataSetObserver(new DataSetObserver() {
             @Override
@@ -110,7 +115,7 @@ public class ContactaCentro extends Fragment {
         String input = inputText.getText().toString();
         if (!input.equals("")) {
             // Create our 'model', a Chat object
-            Chat chat = new Chat(input, mUsername,MainActivity.uid);
+            Chat chat = new Chat(input, mUsername, MainActivity.uid);
             // Create a new, auto-generated child of that chat location, and save our chat data there
             mFirebaseRef.push().setValue(chat);
             inputText.setText("");

@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.Usuari;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Cliente;
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;

@@ -5,14 +5,23 @@ package com.example.sandra.gymapp.classesjava;
  * Created by 47419119l on 28/04/16.
  */
 public class InfoGym {
+
+    int idGym;
     String nombreGym;
     String direccionGym;
     int telefonoGym;
     String correoElectronicoGym;
-    double latitudGym;
-    double longitudGym;
+    long latitudGym;
+    long longitudGym;
     String horarioGym[];
 
+    public int getIdGym() {
+        return idGym;
+    }
+
+    public void setIdGym(int idGym) {
+        this.idGym = idGym;
+    }
     public String getNombreGym() {
         return nombreGym;
     }
@@ -45,19 +54,19 @@ public class InfoGym {
         this.correoElectronicoGym = correoElectronicoGym;
     }
 
-    public double getLatitudGym() {
+    public long getLatitudGym() {
         return latitudGym;
     }
 
-    public void setLatitudGym(double latitudGym) {
+    public void setLatitudGym(long latitudGym) {
         this.latitudGym = latitudGym;
     }
 
-    public double getLongitudGym() {
+    public long getLongitudGym() {
         return longitudGym;
     }
 
-    public void setLongitudGym(double longitudGym) {
+    public void setLongitudGym(long longitudGym) {
         this.longitudGym = longitudGym;
     }
 

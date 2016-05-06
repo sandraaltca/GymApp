@@ -101,5 +101,19 @@ public class Cliente {
         this.sexo = sexo;
     }
 
+    public String getDni() {
+        return dni;
+    }
 
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getApellido2() {
+        return apellido2;
+    }
+
+    public void setApellido2(String apellido2) {
+        this.apellido2 = apellido2;
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.Maquines;
 
 
 import android.content.ActivityNotFoundException;
@@ -15,6 +15,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
+import com.example.sandra.gymapp.MainActivity;
+import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Incidencia;
 import com.firebase.client.Firebase;
 
@@ -25,6 +28,7 @@ import java.util.Date;
 
 
 public class Incidencias extends Fragment {
+
     private Firebase incidenciasRef;
     private Firebase ref;
     private EditText tipusdeIncidencia;
@@ -44,13 +48,14 @@ public class Incidencias extends Fragment {
 
 
         View rootView = inflater.inflate(R.layout.fragment_incidencias, container, false);
-       uid = MainActivity.uid;
+        uid = MainActivity.uid;
         /**
          * Creem una referencia a firebase.
          */
-        Firebase.setAndroidContext(getContext());
-        ref = new Firebase("https://testgimmapp.firebaseio.com/");
-        incidenciasRef = ref.child("Incidencias");
+        FireBaseConfiguracio fireBaseConfiguracio = new FireBaseConfiguracio();
+        fireBaseConfiguracio.configFirebase(getContext());
+        incidenciasRef  =fireBaseConfiguracio.getIncidencias();
+
         /**
          * Instanciem els objectes
          */
@@ -110,8 +115,7 @@ public class Incidencias extends Fragment {
                 incidencia.setIncidencia(missatgeIncidencia.getText().toString());
                 incidencia.setTipusIncidencia(tipusdeIncidencia.getText().toString());
                 incidencia.setData(extreureDataActual());
-
-
+                incidencia.setId(uid+extreureDataActual());
                 pujarIncidencia(incidencia);
                 missatgeIncidencia.setText("");
                 tipusdeIncidencia.setText("");

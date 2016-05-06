@@ -8,6 +8,8 @@ public class Chat {
     private String message;
     private String author;
     private String uidUser;
+    private boolean revisat;
+    private String data;
 
     // Required default constructor for Firebase object mapping
     @SuppressWarnings("unused")
@@ -42,5 +44,21 @@ public class Chat {
 
     public void setUidUser(String uidUser) {
         this.uidUser = uidUser;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public boolean isRevisat() {
+        return revisat;
+    }
+
+    public void setRevisat(boolean revisat) {
+        this.revisat = revisat;
     }
 }

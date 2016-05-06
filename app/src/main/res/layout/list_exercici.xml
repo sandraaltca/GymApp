@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/fotoExercici"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Stepper"
+            android:id="@+id/nomExercici"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/fotoExercici"
+            android:layout_toEndOf="@+id/fotoExercici" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20 min"
+            android:id="@+id/repeticionsEx"
+            android:layout_below="@+id/nomExercici"
+            android:layout_alignLeft="@+id/nomExercici"
+            android:layout_alignStart="@+id/nomExercici"
+            android:layout_marginTop="30dp" />
+    </RelativeLayout>
+</LinearLayout>

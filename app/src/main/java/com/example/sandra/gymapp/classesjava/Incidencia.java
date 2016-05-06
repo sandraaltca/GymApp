@@ -4,13 +4,23 @@ package com.example.sandra.gymapp.classesjava;
  * Created by 47419119l on 27/04/16.
  */
 public class Incidencia {
+
     private String idMaquina;
     private String tipusIncidencia;
     private String incidencia;
     private String user;
     private boolean revisat;
     private String data;
+    private String id;
 
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public Incidencia(){
 
@@ -63,4 +73,11 @@ public class Incidencia {
     public void setRevisat(boolean revisat) {
         this.revisat = revisat;
     }
+
+    public String toString(){
+        return getIncidencia();
+    }
+
+
+
 }

@@ -10,6 +10,7 @@ public class Sesion {
     private int nAsesitents;
     private String monitor;
     private String nom;
+
     public Sesion(){
 
     }

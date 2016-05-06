@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.Sesiones;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.support.v4.app.FragmentTabHost;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.sandra.gymapp.R;
+import com.example.sandra.gymapp.Sesiones.Sesions;
 
 /**
  * A placeholder fragment containing a simple view.

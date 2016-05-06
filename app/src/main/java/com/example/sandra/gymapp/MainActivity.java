@@ -16,6 +16,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.sandra.gymapp.Centro.ContactaCentro;
+import com.example.sandra.gymapp.Centro.LocalizaCentro;
+import com.example.sandra.gymapp.Maquines.Incidencias;
+import com.example.sandra.gymapp.Maquines.UtilizarMaquina;
+import com.example.sandra.gymapp.Rutina.CrearRutina;
+import com.example.sandra.gymapp.Sesiones.Sesions;
+import com.example.sandra.gymapp.Usuari.Tuperfil;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Fragment fragment;
@@ -97,8 +105,8 @@ public class MainActivity extends AppCompatActivity
             i.putExtra("uid", uid);
             startActivity(i);
         } else if (id == R.id.tu_rutina) {
-            fragment = new TuRutina();
-            transaccion = true;
+            i = new Intent(getBaseContext(), CrearRutina.class);
+            startActivity(i);
         } else if (id == R.id.calendario_sesiones) {
            i = new Intent(getBaseContext(), Sesions.class);
             startActivity(i);

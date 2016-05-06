@@ -1,4 +1,4 @@
-package com.example.sandra.gymapp;
+package com.example.sandra.gymapp.Centro;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.InfoGym;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;

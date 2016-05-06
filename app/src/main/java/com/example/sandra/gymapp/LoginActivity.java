@@ -3,10 +3,13 @@ package com.example.sandra.gymapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
 
@@ -44,7 +47,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
-
+    Button olvidarPass;
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -76,6 +79,14 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         Firebase.setAndroidContext(getBaseContext());
         populateAutoComplete();
+        olvidarPass = (Button)findViewById(R.id.olvidarPass);
+        olvidarPass.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("OK");
+                showDialog(1);
+            }
+        });
 
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -87,6 +98,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 }
                 return false;
             }
+            
         });
 
         final Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
@@ -128,6 +140,52 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
 
 
+    }
+    @Override
+    protected Dialog onCreateDialog(int id) {
+
+        return dialogCorreo();
+
+    }
+    private Dialog dialogCorreo() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Recuperar contraseña");
+        builder.setMessage("Escriba su correo");
+
+        // Use an EditText view to get user input.
+        final EditText input = new EditText(this);
+        builder.setView(input);
+
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int whichButton) {
+                String value = input.getText().toString();
+                Firebase ref = new Firebase("https://testgimmapp.firebaseio.com/");
+                ref.resetPassword(value, new Firebase.ResultHandler() {
+                    @Override
+                    public void onSuccess() {
+                        // password reset email sent
+                    }
+                    @Override
+                    public void onError(FirebaseError firebaseError) {
+                        // error encountered
+                    }
+                });
+                return;
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                return;
+            }
+        });
+
+        return builder.create();
     }
 
     private void populateAutoComplete() {

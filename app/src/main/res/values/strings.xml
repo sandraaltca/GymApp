@@ -114,4 +114,13 @@
     </string>
     <string name="title_activity_step_maquina">StepMaquina</string>
     <string name="title_activity_sesions">Sesions</string>
+    <string name="title_activity_crear_rutina">CrearRutina</string>
+    <string name="title_activity_details_rutina">DetailsRutina</string>
+    <string name="title_activity_formulari_rutines_custom">FormulariRutinesCustom</string>
+    <string name="nivell_prompt">Elije un nivel</string>
+    <string-array name="nivell_arrays">
+        <item>Principiante</item>
+        <item>Intesidad Media</item>
+        <item>Intesidad Alta</item>
+    </string-array>
 </resources>

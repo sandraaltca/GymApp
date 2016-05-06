@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.sandra.gymapp.MainActivity;
 import com.example.sandra.gymapp.R;
 import com.firebase.client.Query;
 
@@ -39,26 +40,28 @@ public class ChatListAdapter extends FirebaseListAdapter<Chat> {
      */
     @Override
     protected void populateView(View view, Chat chat) {
-        // Map a Chat object to an entry in our listview
-        String author = chat.getAuthor();
-        TextView authorText = (TextView) view.findViewById(R.id.author);
-        ImageView image = (ImageView) view.findViewById(R.id.picChat);
-        authorText.setText(author + ": ");
 
-        if (author != null && author.equals(mUsername)) {
-            authorText.setTextColor(Color.GRAY);
-            Picasso.with(context)
-                    .load(R.mipmap.client)
-                    .fit()
-                    .into(image);
-        } else {
-            authorText.setTextColor(Color.DKGRAY);
-            Picasso.with(context)
-                    .load(R.mipmap.gimnas)
-                    .fit()
-                    .into(image);
-        }
-        ((TextView) view.findViewById(R.id.message)).setText(chat.getMessage());
+           // Map a Chat object to an entry in our listview
+           String author = chat.getAuthor();
+           TextView authorText = (TextView) view.findViewById(R.id.author);
+           ImageView image = (ImageView) view.findViewById(R.id.picChat);
+           authorText.setText(author + ": ");
+
+           if (author != null && author.equals(mUsername)) {
+               authorText.setTextColor(Color.GRAY);
+               Picasso.with(context)
+                       .load(R.mipmap.client)
+                       .fit()
+                       .into(image);
+           } else {
+               authorText.setTextColor(Color.DKGRAY);
+               Picasso.with(context)
+                       .load(R.mipmap.gimnas)
+                       .fit()
+                       .into(image);
+           }
+           ((TextView) view.findViewById(R.id.message)).setText(chat.getMessage());
+
     }
 }
 
