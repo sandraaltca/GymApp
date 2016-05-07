@@ -1,14 +1,7 @@
-package com.example.sandra.gymapp.Rutina;
-import android.content.Context;
+package com.example.sandra.gymapp.ArrayAdapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.TextView;
-
-import com.example.sandra.gymapp.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +10,7 @@ import java.util.List;
  * Created by sandra on 07/05/2016.
  */
 
-class ViewPagerAdapter extends FragmentPagerAdapter {
+public class ViewPagerAdapter extends FragmentPagerAdapter {
     private final List<Fragment> mFragmentList = new ArrayList<>();
     private final List<String> mFragmentTitleList = new ArrayList<>();
 

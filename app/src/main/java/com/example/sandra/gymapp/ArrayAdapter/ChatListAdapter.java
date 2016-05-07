@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.sandra.gymapp.MainActivity;
 import com.example.sandra.gymapp.R;
 import com.firebase.client.Query;
 

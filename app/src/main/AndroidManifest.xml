@@ -53,13 +53,23 @@
         </activity>
         <activity
             android:name=".Rutina.FormulariRutinesCustom"
-            android:label="@string/title_activity_formulari_rutines_custom"
-            android:parentActivityName=".Rutina.CrearRutina"
+            android:label="Crea tu rutina"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.sandra.gymapp.Rutina.CrearRutina" />
+                android:value="com.example.sandra.gymapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".Rutina.DetailsRutina"
+            android:label=""
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.sandra.gymapp.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>
