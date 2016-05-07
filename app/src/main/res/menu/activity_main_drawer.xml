@@ -6,16 +6,23 @@
             android:id="@+id/tu_perfil"
             android:icon="@mipmap/perfil"
             android:title="Tu perfil" />
-        <item
-            android:id="@+id/tu_rutina"
-            android:icon="@mipmap/rutina"
-            android:title="Tu rutina" />
-        <item
-            android:id="@+id/calendario_sesiones"
-            android:icon="@mipmap/calendar"
-            android:title="Calendario de sesiones" />
+
 
     </group>
+    <item android:title="Rutinas">
+        <menu>
+            <item
+                android:id="@+id/rutina_standard"
+                android:icon="@mipmap/rutina"
+                android:title="Rutinas predefinidas" />
+            <item
+                android:id="@+id/rutina_customizada"
+                android:icon="@mipmap/rutina"
+                android:title="Tus rutinas personalizadas" />
+        </menu>
+    </item>
+
+
 
     <item android:title="Máquinas">
         <menu>
@@ -29,7 +36,20 @@
                 android:title="Incidencies" />
         </menu>
     </item>
+    <item android:title="Calendarios">
+        <menu>
+            <item
+                android:id="@+id/calendario_sesiones_ordinarias"
+                android:icon="@mipmap/calendar"
+                android:title="Sesiones normales" />
 
+            <item
+                android:id="@+id/calendario_sesiones_especiales"
+                android:icon="@mipmap/calendar"
+                android:title="Sesiones especiales" />
+
+        </menu>
+    </item>
     <item android:title="Centro">
         <menu>
             <item
@@ -42,5 +62,12 @@
                 android:title="Localiza el centro" />
         </menu>
     </item>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/abaout"
+            android:icon="@mipmap/info"
+            android:title="About GimmApp" />
 
+
+    </group>
 </menu>
