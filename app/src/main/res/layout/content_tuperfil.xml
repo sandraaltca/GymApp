@@ -81,7 +81,7 @@
                     android:layout_alignTop="@+id/numSoci"
                     android:layout_alignLeft="@+id/imageView2"
                     android:layout_alignStart="@+id/imageView2"
-                    android:src="@drawable/ic_pets_indigo_a700_18dp"
+                    android:src="@mipmap/id"
                     android:contentDescription=""
                     android:layout_marginRight="25dp" />
             </RelativeLayout>
@@ -174,7 +174,7 @@
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginRight="30dp"
-                    android:src="@mipmap/direc" />
+                    android:src="@mipmap/adrs" />
 
                 <TextView
                     android:layout_width="wrap_content"

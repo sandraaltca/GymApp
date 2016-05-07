@@ -11,18 +11,18 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:src="@drawable/abc_ic_menu_cut_mtrl_alpha" />
+        android:src="@drawable/abc_ic_menu_cut_mtrl_alpha"
+        android:layout_marginRight="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cardio "
         android:id="@+id/nomRutina"
+        android:textStyle="bold"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/imageView"
-        android:layout_toEndOf="@+id/imageView"
-        android:textStyle="bold"
-        android:layout_marginTop="15dp" />
+        android:layout_toEndOf="@+id/imageView" />
 
     <ImageView
         android:layout_width="20dp"
@@ -31,7 +31,8 @@
         android:layout_below="@+id/nomRutina"
         android:layout_toRightOf="@+id/imageView"
         android:layout_toEndOf="@+id/imageView"
-        android:src="@drawable/ic_query_builder_indigo_a400_24dp" />
+        android:src="@mipmap/temps"
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,7 +42,8 @@
         android:layout_below="@+id/nomRutina"
         android:layout_toRightOf="@+id/imageView2"
         android:layout_toEndOf="@+id/imageView2"
-        android:layout_marginTop="2dp" />
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp" />
 
     <ImageView
         android:layout_width="20dp"
@@ -50,7 +52,8 @@
         android:layout_toEndOf="@+id/imageView"
         android:layout_below="@+id/imageView2"
         android:layout_toRightOf="@+id/imageView"
-        android:src="@drawable/ic_query_builder_indigo_a400_24dp" />
+        android:src="@mipmap/level"
+        android:layout_marginTop="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -59,5 +62,6 @@
         android:id="@+id/nivelRutina"
         android:layout_alignTop="@+id/imageView3"
         android:layout_toRightOf="@+id/imageView3"
-        android:layout_toEndOf="@+id/imageView3" />
+        android:layout_toEndOf="@+id/imageView3"
+        android:layout_marginLeft="10dp" />
 </RelativeLayout>

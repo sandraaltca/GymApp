@@ -31,7 +31,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:id="@+id/senChat"
-                android:background="@drawable/ic_question_answer_indigo_a700_36dp"
+                android:background="@mipmap/send"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginRight="5dp" />
