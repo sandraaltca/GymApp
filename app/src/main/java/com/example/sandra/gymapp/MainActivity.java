@@ -20,7 +20,7 @@ import com.example.sandra.gymapp.Centro.ContactaCentro;
 import com.example.sandra.gymapp.Centro.LocalizaCentro;
 import com.example.sandra.gymapp.Maquines.Incidencias;
 import com.example.sandra.gymapp.Maquines.UtilizarMaquina;
-import com.example.sandra.gymapp.Rutina.CrearRutina;
+import com.example.sandra.gymapp.Rutina.test;
 import com.example.sandra.gymapp.Sesiones.Sesions;
 import com.example.sandra.gymapp.Usuari.Tuperfil;
 
@@ -105,10 +105,11 @@ public class MainActivity extends AppCompatActivity
             i.putExtra("uid", uid);
             startActivity(i);
         } else if (id == R.id.tu_rutina) {
-            i = new Intent(getBaseContext(), CrearRutina.class);
-            startActivity(i);
+            fragment = new test();
+            transaccion = true;
         } else if (id == R.id.calendario_sesiones) {
-           i = new Intent(getBaseContext(), Sesions.class);
+            i = new Intent(getBaseContext(), Sesions.class);
+            i.putExtra("uid",uid);
             startActivity(i);
         } else if (id == R.id.maquina_qr) {
             fragment = new UtilizarMaquina();
