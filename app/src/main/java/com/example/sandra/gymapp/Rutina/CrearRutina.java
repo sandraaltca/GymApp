@@ -9,17 +9,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.sandra.gymapp.ArrayAdapter.ViewPagerAdapter;
 import com.example.sandra.gymapp.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class test extends Fragment {
+public class CrearRutina extends Fragment {
 
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
-    public test() {
+    public CrearRutina() {
         // Required empty public constructor
     }
 

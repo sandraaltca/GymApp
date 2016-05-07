@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -21,12 +22,14 @@ import com.example.sandra.gymapp.Centro.LocalizaCentro;
 import com.example.sandra.gymapp.Maquines.Incidencias;
 import com.example.sandra.gymapp.Maquines.UtilizarMaquina;
 import com.example.sandra.gymapp.Rutina.CrearRutina;
+import com.example.sandra.gymapp.Sesiones.Sesiones;
 import com.example.sandra.gymapp.Sesiones.Sesions;
 import com.example.sandra.gymapp.Usuari.Tuperfil;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Fragment fragment;
+    FragmentActivity frag;
     public static String uid;
     public static  FloatingActionButton fab;
 
@@ -99,6 +102,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Intent i ;
         boolean transaccion = false;
+        boolean trans =false;
 
         if (id == R.id.tu_perfil) {
             i = new Intent(getBaseContext(),Tuperfil.class);
@@ -108,9 +112,8 @@ public class MainActivity extends AppCompatActivity
             fragment = new CrearRutina();
             transaccion = true;
         } else if (id == R.id.calendario_sesiones) {
-            i = new Intent(getBaseContext(), Sesions.class);
-            i.putExtra("uid",uid);
-            startActivity(i);
+            fragment = new Sesiones();
+            transaccion = true;
         } else if (id == R.id.maquina_qr) {
             fragment = new UtilizarMaquina();
             transaccion = true;
@@ -133,6 +136,7 @@ public class MainActivity extends AppCompatActivity
             getSupportActionBar().setTitle(item.getTitle());
 
         }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

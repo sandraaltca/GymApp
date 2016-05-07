@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Rutina.CrearRutina">
-
+    tools:context="com.example.sandra.gymapp.Sesiones.Sesiones">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,12 +11,12 @@
 
 
         <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
+            android:id="@+id/tabsSesion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <android.support.v4.view.ViewPager
-            android:id="@+id/viewpager"
+            android:id="@+id/viewpagerSesion"
             android:layout_width="match_parent"
             android:layout_height="464dp"
             android:layout_gravity="center"
@@ -25,4 +24,5 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
     </RelativeLayout>
+
 </FrameLayout>

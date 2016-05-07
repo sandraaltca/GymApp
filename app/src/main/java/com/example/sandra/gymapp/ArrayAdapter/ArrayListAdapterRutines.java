@@ -2,22 +2,16 @@ package com.example.sandra.gymapp.ArrayAdapter;
 
 import android.app.Activity;
 import android.content.Context;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 
 import com.example.sandra.gymapp.R;
-import com.example.sandra.gymapp.classesjava.Chat;
 import com.example.sandra.gymapp.classesjava.RutinaCustomize;
 import com.firebase.client.Query;
 import com.firebase.ui.FirebaseListAdapter;
 import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
 
 /**
  * Created by sandra on 05/05/2016.

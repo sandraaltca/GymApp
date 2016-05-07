@@ -5,7 +5,6 @@ package com.example.sandra.gymapp.Rutina;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,17 +12,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.arasthel.asyncjob.AsyncJob;
 import com.example.sandra.gymapp.ArrayAdapter.ArrayListAdapterRutines;
 import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
 import com.example.sandra.gymapp.MainActivity;
 import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.RutinaCustomize;
-import com.example.sandra.gymapp.classesjava.RutinaStandard;
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
 import com.firebase.client.Query;
 
 import java.util.ArrayList;
