@@ -42,7 +42,7 @@ public class ContactaCentro extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_contacta_centro, container, false);
-        inputText = (EditText) rootView.findViewById(R.id.messageInput);
+        inputText = (EditText) rootView.findViewById(R.id.message_input);
         nomsUsuari();
 
         FireBaseConfiguracio fireBaseConfiguracio = new FireBaseConfiguracio();

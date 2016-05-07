@@ -4,31 +4,28 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/tu_perfil"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@mipmap/perfil"
             android:title="Tu perfil" />
         <item
             android:id="@+id/tu_rutina"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@mipmap/rutina"
             android:title="Tu rutina" />
         <item
             android:id="@+id/calendario_sesiones"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@mipmap/calendar"
             android:title="Calendario de sesiones" />
-        <item
-            android:id="@+id/video_sesiones"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Videos sesiones" />
+
     </group>
 
     <item android:title="Máquinas">
         <menu>
             <item
                 android:id="@+id/maquina_qr"
-                android:icon="@drawable/ic_menu_share"
-                android:title="¿Como utilitzar está máquina?" />
+                android:icon="@mipmap/maqu"
+                android:title="Utilizar máquina" />
             <item
                 android:id="@+id/maquina_incidencia"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@mipmap/inicide"
                 android:title="Incidencies" />
         </menu>
     </item>
@@ -37,11 +34,11 @@
         <menu>
             <item
                 android:id="@+id/contacta_centro"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@mipmap/chat"
                 android:title="Contacta con el centro" />
             <item
                 android:id="@+id/localiza_centro"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@mipmap/loc"
                 android:title="Localiza el centro" />
         </menu>
     </item>

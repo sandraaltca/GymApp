@@ -110,9 +110,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.calendario_sesiones) {
            i = new Intent(getBaseContext(), Sesions.class);
             startActivity(i);
-        } else if (id == R.id.video_sesiones) {
-            fragment = new VideoSesiones();
-            transaccion = true;
         } else if (id == R.id.maquina_qr) {
             fragment = new UtilizarMaquina();
             transaccion = true;

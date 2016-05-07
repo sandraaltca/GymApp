@@ -17,17 +17,17 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:background="#de003cff"
+            android:background="#2196F3"
             android:id="@+id/relativeLayout">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:src="@drawable/abc_ic_menu_cut_mtrl_alpha"
+                android:src="@mipmap/levelde"
                 android:layout_margin="30dp" />
 
             <TextView
@@ -41,10 +41,10 @@
                 android:textColor="#fff" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView4"
-                android:src="@drawable/abc_ic_menu_cut_mtrl_alpha"
+                android:src="@mipmap/stopwatch"
                 android:layout_below="@+id/nivelDetailRutina"
                 android:layout_alignLeft="@+id/imageView"
                 android:layout_alignStart="@+id/imageView"
@@ -61,13 +61,13 @@
                 android:layout_alignStart="@+id/nivelDetailRutina" />
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView5"
                 android:layout_below="@+id/imageView4"
                 android:layout_alignLeft="@+id/imageView4"
                 android:layout_alignStart="@+id/imageView4"
-                android:src="@drawable/abc_ic_menu_cut_mtrl_alpha"
+                android:src="@mipmap/info"
                 android:layout_marginTop="20dp" />
 
             <TextView
