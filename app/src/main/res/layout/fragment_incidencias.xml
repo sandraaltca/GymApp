@@ -153,15 +153,6 @@
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
-        <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:id="@+id/enviarIncidencia"
-            android:layout_below="@+id/card_view3"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="46dp"
-            android:background="@mipmap/send" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -175,4 +166,13 @@
             android:layout_marginTop="20dp" />
 
     </RelativeLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@mipmap/sendblanc" />
+
 </FrameLayout>

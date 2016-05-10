@@ -5,6 +5,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,14 +29,14 @@ import java.util.Date;
 
 
 public class Incidencias extends Fragment {
-
+    private FloatingActionButton enviar;
     private Firebase incidenciasRef;
     private Firebase ref;
     private EditText tipusdeIncidencia;
     private EditText missatgeIncidencia;
     private TextView tvResult;
     private ImageButton buttonReader;
-    private ImageButton enviar;
+ //   private ImageButton enviar;
     private String uid;
     public Incidencias() {
         // Required empty public constructor
@@ -63,7 +64,7 @@ public class Incidencias extends Fragment {
         tipusdeIncidencia = (EditText)rootView.findViewById(R.id.textView17);
         buttonReader = (ImageButton) rootView.findViewById(R.id.butoQR);
         tvResult= (TextView) rootView.findViewById(R.id.tvResult);
-        enviar = (ImageButton) rootView.findViewById(R.id.enviarIncidencia);
+        enviar= (FloatingActionButton) rootView.findViewById(R.id.fab);
 
         /**
          * Configurem el botons
