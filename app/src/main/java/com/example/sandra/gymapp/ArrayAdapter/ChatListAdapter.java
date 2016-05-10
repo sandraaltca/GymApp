@@ -46,7 +46,7 @@ public class ChatListAdapter extends FirebaseListAdapter<Chat> {
            ImageView image = (ImageView) view.findViewById(R.id.picChat);
            authorText.setText(author + ": ");
 
-           if (author != null && author.equals(mUsername)) {
+           if (author != null &&! author.equals("Centro")) {
                authorText.setTextColor(Color.GRAY);
                Picasso.with(context)
                        .load(R.mipmap.client)
