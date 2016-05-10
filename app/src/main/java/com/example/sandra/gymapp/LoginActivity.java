@@ -124,8 +124,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     public void onAuthenticationError(FirebaseError firebaseError) {
                         mEmailView.setText("");
                         mPasswordView.setText("");
-                        Toast.makeText(getBaseContext(), "Autentificació fallida", Toast.LENGTH_LONG).show();
-
 
                     }
                 });

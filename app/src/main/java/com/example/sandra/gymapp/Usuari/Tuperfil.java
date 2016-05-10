@@ -14,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Cliente;
@@ -123,7 +124,6 @@ public class Tuperfil extends AppCompatActivity {
         LayoutInflater factory = LayoutInflater.from(this);
 
         final View textEntryView = factory.inflate(R.layout.text_entry, null);
-        //text_entry is an Layout XML file containing two text field to display in alert dialog
 
         final EditText input1 = (EditText) textEntryView.findViewById(R.id.editText);
         final EditText input2 = (EditText) textEntryView.findViewById(R.id.editText2);
@@ -139,31 +139,26 @@ public class Tuperfil extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,
                                         int whichButton) {
-
-                        Log.i("AlertDialog", "TextEntry 1 Entered " + input1.getText().toString());
-                        Log.i("AlertDialog","TextEntry 2 Entered "+input2.getText().toString());
-
-
+                        
                         ref.changePassword(email.getText().toString(), input1.getText().toString(), input2.getText().toString(), new Firebase.ResultHandler() {
                             @Override
                             public void onSuccess() {
-                                System.out.println("-------------------------------OK");
+                                Toast.makeText(getBaseContext(), "Constraseña modificada", Toast.LENGTH_LONG).show();
+
                             }
 
                             @Override
                             public void onError(FirebaseError firebaseError) {
-                                System.out.println("-------------------------------No Found");
+                                Toast.makeText(getBaseContext(), "Error al modificar.", Toast.LENGTH_LONG).show();
+
                             }
                         });
-        /* User clicked OK so do some stuff */
+
                     }
                 }).setNegativeButton("Cancelar",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,
                                         int whichButton) {
-         /*
-         * User clicked cancel so do some stuff
-         */
                     }
                 });
         alert.show();
