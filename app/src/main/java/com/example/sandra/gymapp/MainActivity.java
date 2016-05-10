@@ -22,8 +22,11 @@ import com.example.sandra.gymapp.Centro.LocalizaCentro;
 import com.example.sandra.gymapp.Maquines.Incidencias;
 import com.example.sandra.gymapp.Maquines.UtilizarMaquina;
 import com.example.sandra.gymapp.Rutina.CrearRutina;
+import com.example.sandra.gymapp.Rutina.RutinesCustomizadas;
+import com.example.sandra.gymapp.Rutina.RutinesStandard;
 import com.example.sandra.gymapp.Sesiones.Sesiones;
-import com.example.sandra.gymapp.Sesiones.Sesions;
+import com.example.sandra.gymapp.Sesiones.SesionesOrdinarias;
+import com.example.sandra.gymapp.Sesiones.SesionsEspecials;
 import com.example.sandra.gymapp.Usuari.Tuperfil;
 
 public class MainActivity extends AppCompatActivity
@@ -77,6 +80,9 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.content_frame, new Home())
+                .commit();
         return true;
     }
 
@@ -108,11 +114,17 @@ public class MainActivity extends AppCompatActivity
             i = new Intent(getBaseContext(),Tuperfil.class);
             i.putExtra("uid", uid);
             startActivity(i);
-        } else if (id == R.id.tu_rutina) {
-            fragment = new CrearRutina();
+        } else if (id == R.id.rutina_customizada) {
+            fragment = new RutinesCustomizadas();
             transaccion = true;
-        } else if (id == R.id.calendario_sesiones) {
-            fragment = new Sesiones();
+        } else if (id == R.id.rutina_standard) {
+            fragment = new RutinesStandard();
+            transaccion = true;
+        } else if (id == R.id.calendario_sesiones_ordinarias) {
+            fragment = new SesionesOrdinarias();
+            transaccion = true;
+        } else if (id == R.id.calendario_sesiones_especiales) {
+            fragment = new SesionsEspecials();
             transaccion = true;
         } else if (id == R.id.maquina_qr) {
             fragment = new UtilizarMaquina();
@@ -126,6 +138,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.localiza_centro) {
             fragment = new LocalizaCentro();
             transaccion = true;
+        }else if(id==R.id.abaout){
+
         }
         if(transaccion){
             getSupportFragmentManager().beginTransaction()
