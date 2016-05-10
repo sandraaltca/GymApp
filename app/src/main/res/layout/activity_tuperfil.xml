@@ -21,7 +21,7 @@
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            android:background="@mipmap/profile">
+            android:background="@mipmap/profileuser">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"

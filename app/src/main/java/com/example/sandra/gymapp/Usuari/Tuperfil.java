@@ -42,7 +42,6 @@ public class Tuperfil extends AppCompatActivity {
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
-
         /**
          * Extreiem el intent
          */
@@ -56,6 +55,7 @@ public class Tuperfil extends AppCompatActivity {
         telefon = (TextView)findViewById(R.id.telfPerfil);
         direccio = (TextView)findViewById(R.id.direccioPerfil);
         email = (TextView)findViewById(R.id.emailPerfil);
+        setTitle("");
         /**
          * Referencia firebase.
          */
@@ -139,7 +139,7 @@ public class Tuperfil extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,
                                         int whichButton) {
-                        
+
                         ref.changePassword(email.getText().toString(), input1.getText().toString(), input2.getText().toString(), new Firebase.ResultHandler() {
                             @Override
                             public void onSuccess() {
