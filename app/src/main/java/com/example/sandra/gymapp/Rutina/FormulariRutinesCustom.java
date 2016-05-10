@@ -149,18 +149,21 @@ public class FormulariRutinesCustom extends AppCompatActivity {
 
         RutinaCustomizada = ref.child("RutinasCustomizadas");
         RutinaCustomize customize = new RutinaCustomize();
+        if(nomRutina.getText().toString().equals("")||descripcioRutina.getText().toString().equals("")||tempsRutina.getText().toString().equals("")){
+            Toast.makeText(getBaseContext(), "Faltan campos por rellenar", Toast.LENGTH_LONG).show();
+        }else {
+            customize.setNom(nomRutina.getText().toString());
+            customize.setTemps(Integer.parseInt(tempsRutina.getText().toString()));
+            String nivellstring = String.valueOf(nivellRutina.getSelectedItem());
+            customize.setNivell(nivellstring);
+            customize.setDescripcio(descripcioRutina.getText().toString());
+            customize.setImage("http://www.cambiatufisico.com/wp-content/uploads/gimnasio5.jpg");
+            customize.setExercicis(exercicis);
+            customize.setUidUser(uidUser);
 
-        customize.setNom(nomRutina.getText().toString());
-        customize.setTemps(Integer.parseInt(tempsRutina.getText().toString()));
-        String nivellstring = String.valueOf(nivellRutina.getSelectedItem());
-        customize.setNivell(nivellstring);
-        customize.setDescripcio(descripcioRutina.getText().toString());
-        customize.setImage("http://www.cambiatufisico.com/wp-content/uploads/gimnasio5.jpg");
-        customize.setExercicis(exercicis);
-        customize.setUidUser(uidUser);
-
-        Firebase client = RutinaCustomizada.push();
-        client.setValue(customize);
+            Firebase client = RutinaCustomizada.push();
+            client.setValue(customize);
+        }
     }
 
 }
