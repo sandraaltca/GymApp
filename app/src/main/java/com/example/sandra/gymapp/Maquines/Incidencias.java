@@ -36,7 +36,6 @@ public class Incidencias extends Fragment {
     private EditText missatgeIncidencia;
     private TextView tvResult;
     private ImageButton buttonReader;
- //   private ImageButton enviar;
     private String uid;
     public Incidencias() {
         // Required empty public constructor
@@ -130,6 +129,12 @@ public class Incidencias extends Fragment {
         });
     }
 
+    /**
+     * Metodes que s'executarà al lleguir el codiQr
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

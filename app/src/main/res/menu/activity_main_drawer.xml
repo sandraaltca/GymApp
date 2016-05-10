@@ -33,7 +33,7 @@
             <item
                 android:id="@+id/maquina_incidencia"
                 android:icon="@mipmap/inicide"
-                android:title="Incidencies" />
+                android:title="Incidencias" />
         </menu>
     </item>
     <item android:title="Calendarios">

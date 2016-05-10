@@ -24,9 +24,6 @@ import com.google.zxing.integration.android.IntentResult;
 
 
 public class UtilizarMaquina extends Fragment {
-    private Firebase maquinaRef;
-    private Firebase ref;
-    private ListView listStep;
     private ImageButton butonqrMaquines;
 
 
@@ -41,50 +38,19 @@ public class UtilizarMaquina extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        /**
-         * ocultem butó fab
-         */
-
         View rootView =inflater.inflate(R.layout.fragment_utilizar_maquina, container, false);
-        /**
-         * Creo referencia firebase
-         */
-        FireBaseConfiguracio fireBaseConfiguracio = new FireBaseConfiguracio();
-        fireBaseConfiguracio.configFirebase(getContext());
-        maquinaRef   =fireBaseConfiguracio.getMaquines();
         /**
          * Instanciem objectes layout.
          */
-        listStep = (ListView)rootView.findViewById(R.id.nomLlistaDispo);
         butonqrMaquines =(ImageButton)rootView.findViewById(R.id.butonqrMaquines);
 
         configuracioButoQr();
-        configuracioLlistaMaquines();
         return rootView;
     }
-    private void configuracioLlistaMaquines(){
 
-        final FirebaseListAdapter adapter = new FirebaseListAdapter<Maquina>(getActivity(), Maquina.class, R.layout.list_maquines, maquinaRef) {
-            @Override
-            protected void populateView(View v, Maquina info, int position) {
-                TextView nom = (TextView) v.findViewById(R.id.nomMaquinaLlistaDispo);
-                nom.setText(info.getNom());
-            }
-        };
-        listStep.setAdapter(adapter);
-
-        listStep.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i = new Intent(getContext(), StepMaquinaFragment.class);
-                Maquina m= (Maquina) adapter.getItem(position);
-                i.putExtra("item", m.getId());
-                startActivity(i);
-            }
-        });
-
-    }
-
+    /**
+     * Metode per configurar el botó Qr.
+     */
     private void configuracioButoQr() {
 
         butonqrMaquines.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +67,13 @@ public class UtilizarMaquina extends Fragment {
             }
         });
     }
+
+    /**
+     * Metode que s'executara al sortir el resultat de l bacecore reader.
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
