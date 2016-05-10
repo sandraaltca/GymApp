@@ -156,7 +156,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Escaneji el Codi QR que té al costat de la màquina de la qual vol possar una incidència."
+            android:text="Escaneé el código Qr que tiene al lado de la máquina para poder realizar la inicidencia"
             android:id="@+id/textView18"
             android:textStyle="italic"
             android:textAlignment="center"

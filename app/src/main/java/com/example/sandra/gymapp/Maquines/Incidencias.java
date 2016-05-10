@@ -110,16 +110,21 @@ public class Incidencias extends Fragment {
             @Override
             public void onClick(View v) {
                 Incidencia incidencia = new Incidencia();
-                incidencia.setIdMaquina(tvResult.getText().toString());
-                incidencia.setRevisat(false);
-                incidencia.setUser(uid);
-                incidencia.setIncidencia(missatgeIncidencia.getText().toString());
-                incidencia.setTipusIncidencia(tipusdeIncidencia.getText().toString());
-                incidencia.setData(extreureDataActual());
-                incidencia.setId(uid+extreureDataActual());
-                pujarIncidencia(incidencia);
-                missatgeIncidencia.setText("");
-                tipusdeIncidencia.setText("");
+                if (tvResult.getText().toString().equals("123-123-123")) {
+                    Toast.makeText(getContext(), "No ha escaneado el código Qr", Toast.LENGTH_LONG).show();
+
+                } else {
+                    incidencia.setIdMaquina(tvResult.getText().toString());
+                    incidencia.setRevisat(false);
+                    incidencia.setUser(uid);
+                    incidencia.setIncidencia(missatgeIncidencia.getText().toString());
+                    incidencia.setTipusIncidencia(tipusdeIncidencia.getText().toString());
+                    incidencia.setData(extreureDataActual());
+                    incidencia.setId(uid + extreureDataActual());
+                    pujarIncidencia(incidencia);
+                    missatgeIncidencia.setText("");
+                    tipusdeIncidencia.setText("");
+                }
 
             }
         });
@@ -139,7 +144,7 @@ public class Incidencias extends Fragment {
         if (scanResult != null) {
             updateUITextViews(scanResult.getContents(), scanResult.getFormatName());
         } else {
-            Toast.makeText(getContext(), "No s'ha pogut lleguir cap codi Qr", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "No se ha podido leer el codigo Qr", Toast.LENGTH_SHORT).show();
         }
     }
 
