@@ -139,7 +139,8 @@ public class MainActivity extends AppCompatActivity
             fragment = new LocalizaCentro();
             transaccion = true;
         }else if(id==R.id.abaout){
-
+            fragment = new Home();
+            transaccion = true;
         }
         if(transaccion){
             getSupportFragmentManager().beginTransaction()
