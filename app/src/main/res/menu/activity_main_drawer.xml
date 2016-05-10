@@ -17,7 +17,7 @@
                 android:title="Rutinas predefinidas" />
             <item
                 android:id="@+id/rutina_customizada"
-                android:icon="@mipmap/rutina"
+                android:icon="@mipmap/rutinacusto"
                 android:title="Tus rutinas personalizadas" />
         </menu>
     </item>
@@ -45,7 +45,7 @@
 
             <item
                 android:id="@+id/calendario_sesiones_especiales"
-                android:icon="@mipmap/calendar"
+                android:icon="@mipmap/calendarespecial"
                 android:title="Sesiones especiales" />
 
         </menu>
