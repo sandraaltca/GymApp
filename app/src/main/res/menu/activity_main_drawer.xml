@@ -6,8 +6,6 @@
             android:id="@+id/tu_perfil"
             android:icon="@mipmap/perfil"
             android:title="Tu perfil" />
-
-
     </group>
     <item android:title="Rutinas">
         <menu>
@@ -66,7 +64,7 @@
         <item
             android:id="@+id/abaout"
             android:icon="@mipmap/info"
-            android:title="About GimmApp" />
+            android:title="About GymmApp" />
 
 
     </group>

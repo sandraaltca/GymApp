@@ -89,18 +89,25 @@ public class LocalizaCentro extends Fragment {
                 TextView email = (TextView) v.findViewById(R.id.emailCentre);
                 TextView telefon = (TextView) v.findViewById(R.id.telfCentre);
                 TextView semana = (TextView) v.findViewById(R.id.horariCentre);
+                TextView dis = (TextView)v.findViewById(R.id.horario1);
+                TextView diu = (TextView)v.findViewById(R.id.horario3);
 
                 nom.setText(info.getNombreGym());
                 direccio.setText(info.getDireccionGym());
                 email.setText(info.getCorreoElectronicoGym());
                 telefon.setText(String.valueOf(info.getTelefonoGym()));
                 semana.setText("Lunes- viernes : " + info.getHorarioGym()[0]);
+                dis.setText("Sabados : " + info.getHorarioGym()[1]);
+                diu.setText("Domingos y festivos : " + info.getHorarioGym()[2]);
+
+
 
 
             }
         };
         listCentre.setAdapter(adapter);
     }
+
     /**
      * Metode que extreu del firebase totes les posicions dels bolets i les col·loca en el mapa
      */

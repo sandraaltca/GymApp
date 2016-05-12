@@ -11,8 +11,8 @@ public class InfoGym {
     String direccionGym;
     int telefonoGym;
     String correoElectronicoGym;
-    long latitudGym;
-    long longitudGym;
+    double latitudGym;
+    double longitudGym;
     String horarioGym[];
 
     public int getIdGym() {
@@ -54,19 +54,19 @@ public class InfoGym {
         this.correoElectronicoGym = correoElectronicoGym;
     }
 
-    public long getLatitudGym() {
+    public double getLatitudGym() {
         return latitudGym;
     }
 
-    public void setLatitudGym(long latitudGym) {
+    public void setLatitudGym(double latitudGym) {
         this.latitudGym = latitudGym;
     }
 
-    public long getLongitudGym() {
+    public double getLongitudGym() {
         return longitudGym;
     }
 
-    public void setLongitudGym(long longitudGym) {
+    public void setLongitudGym(double longitudGym) {
         this.longitudGym = longitudGym;
     }
 

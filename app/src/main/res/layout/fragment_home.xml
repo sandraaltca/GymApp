@@ -4,10 +4,18 @@
     android:layout_height="match_parent"
     tools:context="com.example.sandra.gymapp.Home">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="left|top"
-        android:background="@mipmap/portada"></RelativeLayout>
+        android:layout_gravity="left|top">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView8"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/home"
+            android:background="#fffcfc" />
+    </RelativeLayout>
 </FrameLayout>
