@@ -52,7 +52,6 @@ public class MainActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -95,6 +94,13 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            finish();
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+
+
             return true;
         }
 
@@ -139,7 +145,8 @@ public class MainActivity extends AppCompatActivity
             fragment = new LocalizaCentro();
             transaccion = true;
         }else if(id==R.id.abaout){
-
+            fragment = new Home();
+            transaccion = true;
         }
         if(transaccion){
             getSupportFragmentManager().beginTransaction()

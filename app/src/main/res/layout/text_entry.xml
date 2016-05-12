@@ -6,6 +6,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:hint="Introduzca su contraseña"
 
         android:id="@+id/editText" />
@@ -13,6 +14,13 @@
     <EditText
         android:layout_width="match_parent"
         android:hint="Introduzca nueva constraseña"
+        android:inputType="textPassword"
         android:layout_height="wrap_content"
         android:id="@+id/editText2" />
+    <EditText
+        android:layout_width="match_parent"
+        android:hint="Repita la constraseña"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText3" />
 </LinearLayout>

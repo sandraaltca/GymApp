@@ -18,6 +18,8 @@ import com.example.sandra.gymapp.FireBase.FireBaseConfiguracio;
 import com.example.sandra.gymapp.MainActivity;
 import com.example.sandra.gymapp.R;
 import com.example.sandra.gymapp.classesjava.Chat;
+import com.example.sandra.gymapp.classesjava.Cliente;
+import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
@@ -107,8 +109,38 @@ public class ContactaCentro extends Fragment {
 
 
     private void nomsUsuari() {
+        Firebase.setAndroidContext(getContext());
+        Firebase ref = new Firebase("https://testgimmapp.firebaseio.com/");
+        Firebase ref2 = ref.child("Clientes");
+        Query queryRef = ref2.orderByChild("uid").equalTo(MainActivity.uid);
 
-        mUsername = "yo";
+        queryRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot snapshot, String previousChild) {
+                Cliente a=  snapshot.getValue(Cliente.class);
+                mUsername = a.getNombre();
+            }
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+
+            }
+        });
+
 
     }
     private void enviarMissatge() {

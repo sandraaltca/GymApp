@@ -127,7 +127,7 @@ public class Tuperfil extends AppCompatActivity {
 
         final EditText input1 = (EditText) textEntryView.findViewById(R.id.editText);
         final EditText input2 = (EditText) textEntryView.findViewById(R.id.editText2);
-
+        final EditText input3 = (EditText) textEntryView.findViewById(R.id.editText3);
 
         //input1.setText("DefaultValue", TextView.BufferType.EDITABLE);
         //input2.setText("DefaultValue", TextView.BufferType.EDITABLE);
@@ -139,7 +139,7 @@ public class Tuperfil extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,
                                         int whichButton) {
-
+                    if(input2.getText().toString().equals(input3.getText().toString())) {
                         ref.changePassword(email.getText().toString(), input1.getText().toString(), input2.getText().toString(), new Firebase.ResultHandler() {
                             @Override
                             public void onSuccess() {
@@ -153,6 +153,10 @@ public class Tuperfil extends AppCompatActivity {
 
                             }
                         });
+                    }else{
+                        Toast.makeText(getBaseContext(), "No coinciden las contraseñas", Toast.LENGTH_LONG).show();
+
+                    }
 
                     }
                 }).setNegativeButton("Cancelar",
